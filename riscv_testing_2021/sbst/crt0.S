@@ -76,7 +76,8 @@ _start:
 
 /* call boot-time software-based self-test */
 	call _sbst_boot
-
+     call _sbst_alu
+     
 /* call main */
 	lw a0, 0(sp)                    /* a0 = argc */
 	addi a1, sp, __SIZEOF_POINTER__ /* a1 = argv */
