@@ -378,6 +378,133 @@ _sbst_alu:
 	add x31, x31, x1          //update signature
 
 
+///////// LOAD ///////////
+
+	lui x30,0x0F0F0
+	add x31, x31, x30          //update signature
+	lui x29,0x00FF0
+	add x31, x31, x29          //update signature
+	lui x28,0x0F00F
+	add x31, x31, x28          //update signature
+	lui x27,0x7F7F7
+	add x31, x31, x27          //update signature
+	lui x26,0x10101
+	add x31, x31, x26          //update signature
+	lui x25,0x01010
+	add x31, x31, x25          //update signature
+	lui x24,0x000FF
+	add x31, x31, x24          //update signature
+	lui x23,0x3AFAC
+	add x31, x31, x23          //update signature
+	lui x22,0x36472
+	add x31, x31, x22          //update signature
+	lui x21,0x5DDD5
+	add x31, x31, x21          //update signature
+	lui x20,0x1AAA1
+	add x31, x31, x20          //update signature
+	lui x19,0x00001
+	add x31, x31, x19          //update signature
+	lui x18,0x00CCC
+	add x31, x31, x18          //update signature
+	lui x17,0x0DADA
+	add x31, x31, x17          //update signature
+	lui x16,0x07654
+	add x31, x31, x16          //update signature
+	lui x15,0x54321
+	add x31, x31, x15          //update signature
+	lui x14,0x55555
+	add x31, x31, x14          //update signature
+	lui x13,0x5AAAA
+	add x31, x31, x13          //update signature
+	lui x12,0x11111
+	add x31, x31, x12          //update signature
+	lui x11,0x12323
+	add x31, x31, x11          //update signature
+	lui x10,0x33333
+	add x31, x31, x10          //update signature
+	lui x9,0x11111
+	add x31, x31, x9          //update signature
+	lui x8,0x444DD
+	add x31, x31, x8          //update signature
+	lui x7,0x70000
+	add x31, x31, x7          //update signature
+	lui x6,0x00000
+	add x31, x31, x6          //update signature
+	lui x5,0x22222
+	add x31, x31, x5          //update signature
+	lui x4,0x2CE89
+	add x31, x31, x4          //update signature
+	lui x3,0x2AAAA
+	add x31, x31, x3          //update signature
+	lui x2,0x20123
+	add x31, x31, x2          //update signature
+	lui x1,0x3C7D1
+	add x31, x31, x1          //update signature
+
+
+	//AUIPC
+	auipc x30,0x0F0F0
+	add x31, x31, x30          //update signature
+	auipc x29,0x00FF0
+	add x31, x31, x29          //update signature
+	auipc x28,0x0F00F
+	add x31, x31, x28          //update signature
+	auipc x27,0x7F7F7
+	add x31, x31, x27          //update signature
+	auipc x26,0x10101
+	add x31, x31, x26          //update signature
+	auipc x25,0x01010
+	add x31, x31, x25          //update signature
+	auipc x24,0x000FF
+	add x31, x31, x24          //update signature
+	auipc x23,0x3AFAC
+	add x31, x31, x23          //update signature
+	auipc x22,0x36472
+	add x31, x31, x22          //update signature
+	auipc x21,0x5DDD5
+	add x31, x31, x21          //update signature
+	auipc x20,0x1AAA1
+	add x31, x31, x20          //update signature
+	auipc x19,0x00001
+	add x31, x31, x19          //update signature
+	auipc x18,0x00CCC
+	add x31, x31, x18          //update signature
+	auipc x17,0x0DADA
+	add x31, x31, x17          //update signature
+	auipc x16,0x07654
+	add x31, x31, x16          //update signature
+	auipc x15,0x54321
+	add x31, x31, x15          //update signature
+	auipc x14,0x55555
+	add x31, x31, x14          //update signature
+	auipc x13,0x5AAAA
+	add x31, x31, x13          //update signature
+	auipc x12,0x11111
+	add x31, x31, x12          //update signature
+	auipc x11,0x12323
+	add x31, x31, x11          //update signature
+	auipc x10,0x33333
+	add x31, x31, x10          //update signature
+	auipc x9,0x11111
+	add x31, x31, x9          //update signature
+	auipc x8,0x444DD
+	add x31, x31, x8          //update signature
+	auipc x7,0x70000
+	add x31, x31, x7          //update signature
+	auipc x6,0x00000
+	add x31, x31, x6          //update signature
+	auipc x5,0x22222
+	add x31, x31, x5          //update signature
+	auipc x4,0x2CE89
+	add x31, x31, x4          //update signature
+	auipc x3,0x2AAAA
+	add x31, x31, x3          //update signature
+	auipc x2,0x20123
+	add x31, x31, x2          //update signature
+	auipc x1,0x3C7D1
+	add x31, x31, x1          //update signature
+
+
 ///////// SHIFT OPERATIONS /////////
 
 	//new registers obtained using signature as random value
@@ -1217,6 +1344,214 @@ _sbst_alu:
 		add x31, x31, x29         //update signature
 	sra x30, x6, x12
 		add x31, x31, x30         //update signature
+
+
+
+//////////// DIVISION ////////////
+
+	li x1,0x00000001
+	li x2,0xF0F0F0F0
+	li x3,0x0F0F0F0F
+	li x4,0x0000FFFF
+	li x5,0xFFFF0000
+	li x6,0xFFFFFFFF
+	li x7,0x55555555
+	li x8,0xAAAAAAAA
+
+
+	//DIV
+
+	div x9, x2, x1
+	add x31, x31, x9         //update signature
+	div x10, x2, x3
+	add x31, x31, x10         //update signature
+	div x11, x2, x4
+	add x31, x31, x11         //update signature
+	div x12, x2, x7
+	add x31, x31, x12         //update signature
+	div x13, x2, x8
+	add x31, x31, x13         //update signature
+	div x14, x3, x4
+	add x31, x31, x14         //update signature
+	div x15, x4, x1
+	add x31, x31, x15         //update signature
+	div x16, x5, x2
+	add x31, x31, x16        //update signature
+	div x17, x5, x3
+	add x31, x31, x17        //update signature
+	div x18, x5, x4
+	add x31, x31, x18         //update signature
+	div x19, x5, x7
+	add x31, x31, x19         //update signature
+	div x20, x5, x8
+	add x31, x31, x20         //update signature
+	div x21, x6, x1
+	add x31, x31, x21         //update signature
+	div x22, x6, x2
+	add x31, x31, x22         //update signature
+	div x23, x6, x3
+	add x31, x31, x23         //update signature
+	div x24, x6, x4
+	add x31, x31, x24         //update signature
+	div x25, x6, x5
+	add x31, x31, x25        //update signature
+	div x26, x6, x7
+	add x31, x31, x26         //update signature
+	div x27, x6, x8
+	add x31, x31, x27         //update signature
+	div x28, x7, x3
+	add x31, x31, x28         //update signature
+	div x29, x7, x4
+	add x31, x31, x29         //update signature
+	div x30, x8, x7
+	add x31, x31, x30         //update signature
+
+
+	//DIVU
+
+	divu x9, x2, x1
+	add x31, x31, x9         //update signature
+	divu x10, x2, x3
+	add x31, x31, x10         //update signature
+	divu x11, x2, x4
+	add x31, x31, x11         //update signature
+	divu x12, x2, x7
+	add x31, x31, x12         //update signature
+	divu x13, x2, x8
+	add x31, x31, x13         //update signature
+	divu x14, x3, x4
+	add x31, x31, x14         //update signature
+	divu x15, x4, x1
+	add x31, x31, x15         //update signature
+	divu x16, x5, x2
+	add x31, x31, x16         //update signature
+	divu x17, x5, x3
+	add x31, x31, x17         //update signature
+	divu x18, x5, x4
+	add x31, x31, x18         //update signature
+	divu x19, x5, x7
+	add x31, x31, x19         //update signature
+	divu x20, x5, x8
+	add x31, x31, x20         //update signature
+	divu x21, x6, x1
+	add x31, x31, x21         //update signature
+	divu x22, x6, x2
+	add x31, x31, x22         //update signature
+	divu x23, x6, x3
+	add x31, x31, x23         //update signature
+	divu x24, x6, x4
+	add x31, x31, x24         //update signature
+	divu x25, x6, x5
+	add x31, x31, x25         //update signature
+	divu x26, x6, x7
+	add x31, x31, x26         //update signature
+	divu x27, x6, x8
+	add x31, x31, x27         //update signature
+	divu x28, x7, x3
+	add x31, x31, x28         //update signature
+	divu x29, x7, x4
+	add x31, x31, x29         //update signature
+	divu x30, x8, x7
+	add x31, x31, x30         //update signature
+
+
+
+	//REM
+
+	rem x9, x2, x1
+	add x31, x31, x9         //update signature
+	rem x10, x2, x3
+	add x31, x31, x10         //update signature
+	rem x11, x2, x4
+	add x31, x31, x11         //update signature
+	rem x12, x2, x7
+	add x31, x31, x12         //update signature
+	rem x13, x2, x8
+	add x31, x31, x13         //update signature
+	rem x14, x3, x4
+	add x31, x31, x14         //update signature
+	rem x15, x4, x1
+	add x31, x31, x15         //update signature
+	rem x16, x5, x2
+	add x31, x31, x16        //update signature
+	rem x17, x5, x3
+	add x31, x31, x17        //update signature
+	rem x18, x5, x4
+	add x31, x31, x18         //update signature
+	rem x19, x5, x7
+	add x31, x31, x19         //update signature
+	rem x20, x5, x8
+	add x31, x31, x20         //update signature
+	rem x21, x6, x1
+	add x31, x31, x21         //update signature
+	rem x22, x6, x2
+	add x31, x31, x22         //update signature
+	rem x23, x6, x3
+	add x31, x31, x23         //update signature
+	rem x24, x6, x4
+	add x31, x31, x24         //update signature
+	rem x25, x6, x5
+	add x31, x31, x25        //update signature
+	rem x26, x6, x7
+	add x31, x31, x26         //update signature
+	rem x27, x6, x8
+	add x31, x31, x27         //update signature
+	rem x28, x7, x3
+	add x31, x31, x28         //update signature
+	rem x29, x7, x4
+	add x31, x31, x29         //update signature
+	rem x30, x8, x7
+	add x31, x31, x30         //update signature
+
+
+	//remU
+
+	remu x9, x2, x1
+	add x31, x31, x9         //update signature
+	remu x10, x2, x3
+	add x31, x31, x10         //update signature
+	remu x11, x2, x4
+	add x31, x31, x11         //update signature
+	remu x12, x2, x7
+	add x31, x31, x12         //update signature
+	remu x13, x2, x8
+	add x31, x31, x13         //update signature
+	remu x14, x3, x4
+	add x31, x31, x14         //update signature
+	remu x15, x4, x1
+	add x31, x31, x15         //update signature
+	remu x16, x5, x2
+	add x31, x31, x16         //update signature
+	remu x17, x5, x3
+	add x31, x31, x17         //update signature
+	remu x18, x5, x4
+	add x31, x31, x18         //update signature
+	remu x19, x5, x7
+	add x31, x31, x19         //update signature
+	remu x20, x5, x8
+	add x31, x31, x20         //update signature
+	remu x21, x6, x1
+	add x31, x31, x21         //update signature
+	remu x22, x6, x2
+	add x31, x31, x22         //update signature
+	remu x23, x6, x3
+	add x31, x31, x23         //update signature
+	remu x24, x6, x4
+	add x31, x31, x24         //update signature
+	remu x25, x6, x5
+	add x31, x31, x25         //update signature
+	remu x26, x6, x7
+	add x31, x31, x26         //update signature
+	remu x27, x6, x8
+	add x31, x31, x27         //update signature
+	remu x28, x7, x3
+	add x31, x31, x28         //update signature
+	remu x29, x7, x4
+	add x31, x31, x29         //update signature
+	remu x30, x8, x7
+	add x31, x31, x30         //update signature
+
+
 
 
 ///////////////////  OTHER INSTRUCTIONS MUST BE ADDED  /////////////////
