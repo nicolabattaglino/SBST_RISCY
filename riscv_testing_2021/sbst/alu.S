@@ -35,9 +35,10 @@ _sbst_alu:
 	li x4,0x0F0F0F0F
 	li x5,0xAAAAAAAA
 	li x6,0x55555555
+	li x7,0x11111111
+	li x8,0xCCCCCCCC
 
 	//ADDI
-	addi x31,x1,0x000		  //update signature
 	addi x30,x1,0x001
 	add x31, x31, x30          //update signature
 	addi x29,x1,0x2AA
@@ -82,6 +83,9 @@ _sbst_alu:
 	add x31, x31, x10          //update signature
 	addi x9,x5,0x2AA
 	add x31, x31, x9          //update signature
+
+
+/************
 	addi x8,x5,0x555
 	add x31, x31, x8          //update signature
 	addi x7,x5,0x7FF
@@ -96,17 +100,38 @@ _sbst_alu:
 	add x31, x31, x2          //update signature
 	addi x1,x6,0x7FF
 	add x31, x31, x1          //update signature
+***************/
 
+	addi x30,x7,0x001
+	add x31, x31, x30          //update signature
+	addi x29,x7,0x2AA
+	add x31, x31, x29          //update signature
+	addi x28,x7,0x555
+	add x31, x31, x28          //update signature
+	addi x27,x7,0x7FF
+	add x31, x31, x27          //update signature
+	addi x26,x8,0x000
+	add x31, x31, x26          //update signature
+	addi x25,x8,0x001
+	add x31, x31, x25          //update signature
+	addi x24,x8,0x2AA
+	add x31, x31, x24          //update signature
+	addi x23,x8,0x555
+	add x31, x31, x23          //update signature
+	addi x22,x8,0x7FF
+	add x31, x31, x22          //update signature
 
-	//new registers obtained using signature as random value
-	add x1, x1, x31
-	add x2, x2, x31
-	add x3, x3, x31
-	add x4, x4, x31
-	add x5, x5, x31
-	add x6, x6, x31
 
 	// ANDI
+
+	li x1,0xFFFFFFFF
+	li x2,0xF0F0F0F0
+	li x3,0x00000000
+	li x4,0x0F0F0F0F
+	li x5,0xAAAAAAAA
+	li x6,0x55555555
+	li x7,0x11111111
+	li x8,0xCCCCCCCC
 
 	andi x30,x1,0x001
 	add x31, x31, x30          //update signature
@@ -152,6 +177,8 @@ _sbst_alu:
 	add x31, x31, x10          //update signature
 	andi x9,x5,0x2AA
 	add x31, x31, x9          //update signature
+
+/***********************
 	andi x8,x5,0x555
 	add x31, x31, x8          //update signature
 	andi x7,x5,0x7FF
@@ -166,17 +193,39 @@ _sbst_alu:
 	add x31, x31, x2          //update signature
 	andi x1,x6,0x7FF
 	add x31, x31, x1          //update signature
+************************/
+
+	andi x30,x7,0x001
+	add x31, x31, x30          //update signature
+	andi x29,x7,0x2AA
+	add x31, x31, x29          //update signature
+	andi x28,x7,0x555
+	add x31, x31, x28          //update signature
+	andi x27,x7,0x7FF
+	add x31, x31, x27          //update signature
+	andi x26,x8,0x000
+	add x31, x31, x26          //update signature
+	andi x25,x8,0x001
+	add x31, x31, x25          //update signature
+	andi x24,x8,0x2AA
+	add x31, x31, x24          //update signature
+	andi x23,x8,0x555
+	add x31, x31, x23          //update signature
+	andi x22,x8,0x7FF
+	add x31, x31, x22          //update signature
 
 
-	//new registers obtained using signature as random value
-	add x1, x1, x31
-	add x2, x2, x31
-	add x3, x3, x31
-	add x4, x4, x31
-	add x5, x5, x31
-	add x6, x6, x31
 
 	// ORI
+
+	li x1,0xFFFFFFFF
+	li x2,0xF0F0F0F0
+	li x3,0x00000000
+	li x4,0x0F0F0F0F
+	li x5,0xAAAAAAAA
+	li x6,0x55555555
+	li x7,0x11111111
+	li x8,0xCCCCCCCC
 
 	ori x30,x1,0x001
 	add x31, x31, x30          //update signature
@@ -222,6 +271,8 @@ _sbst_alu:
 	add x31, x31, x10          //update signature
 	ori x9,x5,0x2AA
 	add x31, x31, x9          //update signature
+
+/****************************
 	ori x8,x5,0x555
 	add x31, x31, x8          //update signature
 	ori x7,x5,0x7FF
@@ -236,17 +287,39 @@ _sbst_alu:
 	add x31, x31, x2          //update signature
 	ori x1,x6,0x7FF
 	add x31, x31, x1          //update signature
+*******************************/
+
+	ori x30,x7,0x001
+	add x31, x31, x30          //update signature
+	ori x29,x7,0x2AA
+	add x31, x31, x29          //update signature
+	ori x28,x7,0x555
+	add x31, x31, x28          //update signature
+	ori x27,x7,0x7FF
+	add x31, x31, x27          //update signature
+	ori x26,x8,0x000
+	add x31, x31, x26          //update signature
+	ori x25,x8,0x001
+	add x31, x31, x25          //update signature
+	ori x24,x8,0x2AA
+	add x31, x31, x24          //update signature
+	ori x23,x8,0x555
+	add x31, x31, x23          //update signature
+	ori x22,x8,0x7FF
+	add x31, x31, x22          //update signature
 
 
-	//new registers obtained using signature as random value
-	add x1, x1, x31
-	add x2, x2, x31
-	add x3, x3, x31
-	add x4, x4, x31
-	add x5, x5, x31
-	add x6, x6, x31
 
 	// XORI
+
+	li x1,0xFFFFFFFF
+	li x2,0xF0F0F0F0
+	li x3,0x00000000
+	li x4,0x0F0F0F0F
+	li x5,0xAAAAAAAA
+	li x6,0x55555555
+	li x7,0x11111111
+	li x8,0xCCCCCCCC
 
 	xori x30,x1,0x001
 	add x31, x31, x30          //update signature
@@ -292,6 +365,7 @@ _sbst_alu:
 	add x31, x31, x10          //update signature
 	xori x9,x5,0x2AA
 	add x31, x31, x9          //update signature
+/**************************
 	xori x8,x5,0x555
 	add x31, x31, x8          //update signature
 	xori x7,x5,0x7FF
@@ -306,17 +380,39 @@ _sbst_alu:
 	add x31, x31, x2          //update signature
 	xori x1,x6,0x7FF
 	add x31, x31, x1          //update signature
+**************************/
+
+	xori x30,x7,0x001
+	add x31, x31, x30          //update signature
+	xori x29,x7,0x2AA
+	add x31, x31, x29          //update signature
+	xori x28,x7,0x555
+	add x31, x31, x28          //update signature
+	xori x27,x7,0x7FF
+	add x31, x31, x27          //update signature
+	xori x26,x8,0x000
+	add x31, x31, x26          //update signature
+	xori x25,x8,0x001
+	add x31, x31, x25          //update signature
+	xori x24,x8,0x2AA
+	add x31, x31, x24          //update signature
+	xori x23,x8,0x555
+	add x31, x31, x23          //update signature
+	xori x22,x8,0x7FF
+	add x31, x31, x22          //update signature
 
 
-	//new registers obtained using signature as random value
-	add x1, x1, x31
-	add x2, x2, x31
-	add x3, x3, x31
-	add x4, x4, x31
-	add x5, x5, x31
-	add x6, x6, x31
 
 	// SLTI
+
+	li x1,0xFFFFFFFF
+	li x2,0xF0F0F0F0
+	li x3,0x00000000
+	li x4,0x0F0F0F0F
+	li x5,0xAAAAAAAA
+	li x6,0x55555555
+	li x7,0x11111111
+	li x8,0xCCCCCCCC
 
 	slti x30,x1,0x001
 	add x31, x31, x30          //update signature
@@ -362,6 +458,8 @@ _sbst_alu:
 	add x31, x31, x10          //update signature
 	slti x9,x5,0x2AA
 	add x31, x31, x9          //update signature
+
+/*****************
 	slti x8,x5,0x555
 	add x31, x31, x8          //update signature
 	slti x7,x5,0x7FF
@@ -376,9 +474,123 @@ _sbst_alu:
 	add x31, x31, x2          //update signature
 	slti x1,x6,0x7FF
 	add x31, x31, x1          //update signature
+*****************/
+
+	slti x30,x7,0x001
+	add x31, x31, x30          //update signature
+	slti x29,x7,0x2AA
+	add x31, x31, x29          //update signature
+	slti x28,x7,0x555
+	add x31, x31, x28          //update signature
+	slti x27,x7,0x7FF
+	add x31, x31, x27          //update signature
+	slti x26,x8,0x000
+	add x31, x31, x26          //update signature
+	slti x25,x8,0x001
+	add x31, x31, x25          //update signature
+	slti x24,x8,0x2AA
+	add x31, x31, x24          //update signature
+	slti x23,x8,0x555
+	add x31, x31, x23          //update signature
+	slti x22,x8,0x7FF
+	add x31, x31, x22          //update signature
 
 
-///////// LOAD ///////////
+
+	// SLTIU
+
+	li x1,0xFFFFFFFF
+	li x2,0xF0F0F0F0
+	li x3,0x00000000
+	li x4,0x0F0F0F0F
+	li x5,0xAAAAAAAA
+	li x6,0x55555555
+	li x7,0x11111111
+	li x8,0xCCCCCCCC
+
+	sltiu x30,x1,0x001
+	add x31, x31, x30          //update signature
+	sltiu x29,x1,0x2AA
+	add x31, x31, x29          //update signature
+	sltiu x28,x1,0x555
+	add x31, x31, x28          //update signature
+	sltiu x27,x1,0x7FF
+	add x31, x31, x27          //update signature
+	sltiu x26,x2,0x000
+	add x31, x31, x26          //update signature
+	sltiu x25,x2,0x001
+	add x31, x31, x25          //update signature
+	sltiu x24,x2,0x2AA
+	add x31, x31, x24          //update signature
+	sltiu x23,x2,0x555
+	add x31, x31, x23          //update signature
+	sltiu x22,x2,0x7FF
+	add x31, x31, x22          //update signature
+	sltiu x21,x3,0x000
+	add x31, x31, x21          //update signature
+	sltiu x20,x3,0x001
+	add x31, x31, x20          //update signature
+	sltiu x19,x3,0x2AA
+	add x31, x31, x19          //update signature
+	sltiu x18,x3,0x555
+	add x31, x31, x18          //update signature
+	sltiu x17,x3,0x7FF
+	add x31, x31, x17          //update signature
+	sltiu x16,x4,0x000
+	add x31, x31, x16          //update signature
+	sltiu x15,x4,0x001
+	add x31, x31, x15          //update signature
+	sltiu x14,x4,0x2AA
+	add x31, x31, x14          //update signature
+	sltiu x13,x4,0x555
+	add x31, x31, x13          //update signature
+	sltiu x12,x4,0x7FF
+	add x31, x31, x12          //update signature
+	sltiu x11,x5,0x000
+	add x31, x31, x11          //update signature
+	sltiu x10,x5,0x001
+	add x31, x31, x10          //update signature
+	sltiu x9,x5,0x2AA
+	add x31, x31, x9          //update signature
+
+/***********************
+	sltiu x8,x5,0x555
+	add x31, x31, x8          //update signature
+	sltiu x7,x5,0x7FF
+	add x31, x31, x7          //update signature
+	sltiu x5,x6,0x000
+	add x31, x31, x5          //update signature
+	sltiu x4,x6,0x001
+	add x31, x31, x4          //update signature
+	sltiu x3,x6,0x2AA
+	add x31, x31, x3          //update signature
+	sltiu x2,x6,0x555
+	add x31, x31, x2          //update signature
+	sltiu x1,x6,0x7FF
+	add x31, x31, x1          //update signature
+***************************/
+
+	sltiu x30,x7,0x001
+	add x31, x31, x30          //update signature
+	sltiu x29,x7,0x2AA
+	add x31, x31, x29          //update signature
+	sltiu x28,x7,0x555
+	add x31, x31, x28          //update signature
+	sltiu x27,x7,0x7FF
+	add x31, x31, x27          //update signature
+	sltiu x26,x8,0x000
+	add x31, x31, x26          //update signature
+	sltiu x25,x8,0x001
+	add x31, x31, x25          //update signature
+	sltiu x24,x8,0x2AA
+	add x31, x31, x24          //update signature
+	sltiu x23,x8,0x555
+	add x31, x31, x23          //update signature
+	sltiu x22,x8,0x7FF
+	add x31, x31, x22          //update signature
+
+
+///////// AUIPC ///////////
 
 	lui x30,0x0F0F0
 	add x31, x31, x30          //update signature
@@ -507,16 +719,18 @@ _sbst_alu:
 
 ///////// SHIFT OPERATIONS /////////
 
-	//new registers obtained using signature as random value
-	add x1, x1, x31
-	add x2, x2, x31
-	add x3, x3, x31
-	add x4, x4, x31
-	add x5, x5, x31
-	add x6, x6, x31
+
 
 	//SLL
-     slli x13, x1, 1
+
+	li x1,0xFFFFFFFF
+	li x2,0xF0F0F0F0
+	li x3,0x00000000
+	li x4,0x0F0F0F0F
+	li x5,0xAAAAAAAA
+	li x6,0x55555555
+
+	slli x13, x1, 1
 	     add x31, x31, x13          //update signature
      slli x14, x1, 2
 	     add x31, x31, x14         //update signature
@@ -590,15 +804,16 @@ _sbst_alu:
 		add x31, x31, x30         //update signature
 
 
-	//new registers obtained using signature as random value
-	add x1, x1, x31
-	add x2, x2, x31
-	add x3, x3, x31
-	add x4, x4, x31
-	add x5, x5, x31
-	add x6, x6, x31
+
 
      //SRL
+
+	li x1,0xFFFFFFFF
+	li x2,0xF0F0F0F0
+	li x3,0x00000000
+	li x4,0x0F0F0F0F
+	li x5,0xAAAAAAAA
+	li x6,0x55555555
 
      srli x13, x1, 1
 	     add x31, x31, x13          //update signature
@@ -674,15 +889,16 @@ _sbst_alu:
 		add x31, x31, x30         //update signature
 
 
-	//new registers obtained using signature as random value
-	add x1, x1, x31
-	add x2, x2, x31
-	add x3, x3, x31
-	add x4, x4, x31
-	add x5, x5, x31
-	add x6, x6, x31
+
 
      //SRA
+
+	li x1,0xFFFFFFFF
+	li x2,0xF0F0F0F0
+	li x3,0x00000000
+	li x4,0x0F0F0F0F
+	li x5,0xAAAAAAAA
+	li x6,0x55555555
 
      srai x13, x1, 1
 	     add x31, x31, x13          //update signature
@@ -762,16 +978,51 @@ _sbst_alu:
 
 //////////// REGISTER OP ////////////
 
-	//new registers obtained using signature as random value
-	add x1, x1, x31
-	add x2, x2, x31
-	add x3, x3, x31
-	add x4, x4, x31
-	add x5, x5, x31
-	add x6, x6, x31
+
 
      //ADD
-     add x7, x1, x2
+
+	li x1,0xFFFFFFFF
+	li x2,0xF0F0F0F0
+	li x3,0x00000000
+	li x4,0x0F0F0F0F
+	li x5,0xAAAAAAAA
+	li x6,0x55555555
+	li x7,0x11111111
+	li x8,0xCCCCCCCC
+
+////////////// x7 x8 /////////////////
+	add x9, x7, x2
+	add x31, x31, x9          //update signature
+	add x10, x7, x3
+	add x31, x31, x10          //update signature
+	add x11, x7, x4
+	add x31, x31, x11          //update signature
+	add x12, x7, x5
+	add x31, x31, x12          //update signature
+	add x13, x7, x6
+	add x31, x31, x13          //update signature
+	add x14, x7, x7
+	add x31, x31, x14          //update signature
+	add x15, x7, x8
+	add x31, x31, x15          //update signature
+	add x16, x8, x1
+	add x31, x31, x16         //update signature
+	add x17, x8, x2
+	add x31, x31, x17         //update signature
+	add x18, x8, x3
+	add x31, x31, x18         //update signature
+	add x19, x8, x4
+	add x31, x31, x19         //update signature
+	add x20, x8, x5
+	add x31, x31, x20         //update signature
+	add x21, x8, x6
+	add x31, x31, x21         //update signature
+	add x22, x8, x8
+	add x31, x31, x22          //update signature
+///////////////////////////////////////
+
+	add x7, x1, x2
 	add x31, x31, x7          //update signature
 	add x8, x1, x3
 	add x31, x31, x8          //update signature
@@ -815,17 +1066,51 @@ _sbst_alu:
 	add x31, x31, x27          //update signature
 
 
-	//new registers obtained using signature as random value
-	add x1, x1, x31
-	add x2, x2, x31
-	add x3, x3, x31
-	add x4, x4, x31
-	add x5, x5, x31
-	add x6, x6, x31
+
 
      //SUB
 
-     sub x7, x1, x2
+	li x1,0xFFFFFFFF
+	li x2,0xF0F0F0F0
+	li x3,0x00000000
+	li x4,0x0F0F0F0F
+	li x5,0xAAAAAAAA
+	li x6,0x55555555
+	li x7,0x11111111
+	li x8,0xCCCCCCCC
+
+////////////// x7 x8 /////////////////
+	sub x9, x7, x2
+	add x31, x31, x9          //update signature
+	sub x10, x7, x3
+	add x31, x31, x10          //update signature
+	sub x11, x7, x4
+	add x31, x31, x11          //update signature
+	sub x12, x7, x5
+	add x31, x31, x12          //update signature
+	sub x13, x7, x6
+	add x31, x31, x13          //update signature
+	sub x14, x7, x7
+	add x31, x31, x14          //update signature
+	sub x15, x7, x8
+	add x31, x31, x15          //update signature
+	sub x16, x8, x1
+	add x31, x31, x16         //update signature
+	sub x17, x8, x2
+	add x31, x31, x17         //update signature
+	sub x18, x8, x3
+	add x31, x31, x18         //update signature
+	sub x19, x8, x4
+	add x31, x31, x19         //update signature
+	sub x20, x8, x5
+	add x31, x31, x20         //update signature
+	sub x21, x8, x6
+	add x31, x31, x21         //update signature
+	sub x22, x8, x8
+	add x31, x31, x22          //update signature
+///////////////////////////////////////
+
+	sub x7, x1, x2
 	add x31, x31, x7          //update signature
 	sub x8, x1, x3
 	add x31, x31, x8          //update signature
@@ -857,28 +1142,62 @@ _sbst_alu:
 	add x31, x31, x21         //update signature
 	sub x22, x1, x1
 	add x31, x31, x22         //update signature
-// REDUNDANT
-//	sub x23, x2, x2
-//	add x31, x31, x23         //update signature
-//	sub x24, x3, x3
-//	add x31, x31, x24         //update signature
-//	sub x25, x4, x4
-//	add x31, x31, x25         //update signature
-//	sub x26, x5, x5
-//	add x31, x31, x26         //update signature
-//	sub x27, x6, x6
-//	add x31, x31, x27          //update signature
+	sub x23, x2, x2
+	add x31, x31, x23         //update signature
+	sub x24, x3, x3
+	add x31, x31, x24         //update signature
+	sub x25, x4, x4
+	add x31, x31, x25         //update signature
+	sub x26, x5, x5
+	add x31, x31, x26         //update signature
+	sub x27, x6, x6
+	add x31, x31, x27          //update signature
 
 
-	//new registers obtained using signature as random value
-	add x1, x1, x31
-	add x2, x2, x31
-	add x3, x3, x31
-	add x4, x4, x31
-	add x5, x5, x31
-	add x6, x6, x31
+
 
      //AND
+
+	li x1,0xFFFFFFFF
+	li x2,0xF0F0F0F0
+	li x3,0x00000000
+	li x4,0x0F0F0F0F
+	li x5,0xAAAAAAAA
+	li x6,0x55555555
+	li x7,0x11111111
+	li x8,0xCCCCCCCC
+
+////////////// x7 x8 /////////////////
+	and x9, x7, x2
+	add x31, x31, x9          //update signature
+	and x10, x7, x3
+	add x31, x31, x10          //update signature
+	and x11, x7, x4
+	add x31, x31, x11          //update signature
+	and x12, x7, x5
+	add x31, x31, x12          //update signature
+	and x13, x7, x6
+	add x31, x31, x13          //update signature
+	and x14, x7, x7
+	add x31, x31, x14          //update signature
+	and x15, x7, x8
+	add x31, x31, x15          //update signature
+	and x16, x8, x1
+	add x31, x31, x16         //update signature
+	and x17, x8, x2
+	add x31, x31, x17         //update signature
+	and x18, x8, x3
+	add x31, x31, x18         //update signature
+	and x19, x8, x4
+	add x31, x31, x19         //update signature
+	and x20, x8, x5
+	add x31, x31, x20         //update signature
+	and x21, x8, x6
+	add x31, x31, x21         //update signature
+	and x22, x8, x8
+	add x31, x31, x22          //update signature
+///////////////////////////////////////
+
 	and x7, x1, x2
 	add x31, x31, x7          //update signature
 	and x8, x1, x3
@@ -923,15 +1242,49 @@ _sbst_alu:
 	add x31, x31, x27          //update signature
 
 
-	//new registers obtained using signature as random value
-	add x1, x1, x31
-	add x2, x2, x31
-	add x3, x3, x31
-	add x4, x4, x31
-	add x5, x5, x31
-	add x6, x6, x31
 
      //OR
+
+	li x1,0xFFFFFFFF
+	li x2,0xF0F0F0F0
+	li x3,0x00000000
+	li x4,0x0F0F0F0F
+	li x5,0xAAAAAAAA
+	li x6,0x55555555
+	li x7,0x11111111
+	li x8,0xCCCCCCCC
+
+////////////// x7 x8 /////////////////
+	or x9, x7, x2
+	add x31, x31, x9          //update signature
+	or x10, x7, x3
+	add x31, x31, x10          //update signature
+	or x11, x7, x4
+	add x31, x31, x11          //update signature
+	or x12, x7, x5
+	add x31, x31, x12          //update signature
+	or x13, x7, x6
+	add x31, x31, x13          //update signature
+	or x14, x7, x7
+	add x31, x31, x14          //update signature
+	or x15, x7, x8
+	add x31, x31, x15          //update signature
+	or x16, x8, x1
+	add x31, x31, x16         //update signature
+	or x17, x8, x2
+	add x31, x31, x17         //update signature
+	or x18, x8, x3
+	add x31, x31, x18         //update signature
+	or x19, x8, x4
+	add x31, x31, x19         //update signature
+	or x20, x8, x5
+	add x31, x31, x20         //update signature
+	or x21, x8, x6
+	add x31, x31, x21         //update signature
+	or x22, x8, x8
+	add x31, x31, x22          //update signature
+///////////////////////////////////////
+
 	or x7, x1, x2
 	add x31, x31, x7          //update signature
 	or x8, x1, x3
@@ -976,15 +1329,17 @@ _sbst_alu:
 	add x31, x31, x27          //update signature
 
 
-	//new registers obtained using signature as random value
-	add x1, x1, x31
-	add x2, x2, x31
-	add x3, x3, x31
-	add x4, x4, x31
-	add x5, x5, x31
-	add x6, x6, x31
+
 
      //XOR
+
+	li x1,0xFFFFFFFF
+	li x2,0xF0F0F0F0
+	li x3,0x00000000
+	li x4,0x0F0F0F0F
+	li x5,0xAAAAAAAA
+	li x6,0x55555555
+
 	xor x7, x1, x2
 	add x31, x31, x7          //update signature
 	xor x8, x1, x3
@@ -1017,28 +1372,27 @@ _sbst_alu:
 	add x31, x31, x21         //update signature
 	xor x22, x1, x1
 	add x31, x31, x22         //update signature
-//	REDUNDANT
-//	xor x23, x2, x2
-//	add x31, x31, x23         //update signature
-//	xor x24, x3, x3
-//	add x31, x31, x24         //update signature
-//	xor x25, x4, x4
-//	add x31, x31, x25         //update signature
-//	xor x26, x5, x5
-//	add x31, x31, x26         //update signature
-//	xor x27, x6, x6
-//	add x31, x31, x27          //update signature
+	xor x23, x2, x2
+	add x31, x31, x23         //update signature
+	xor x24, x3, x3
+	add x31, x31, x24         //update signature
+	xor x25, x4, x4
+	add x31, x31, x25         //update signature
+	xor x26, x5, x5
+	add x31, x31, x26         //update signature
+	xor x27, x6, x6
+	add x31, x31, x27          //update signature
 
 
-	//new registers obtained using signature as random value
-	add x1, x1, x31
-	add x2, x2, x31
-	add x3, x3, x31
-	add x4, x4, x31
-	add x5, x5, x31
-	add x6, x6, x31
+
 
 	//SLT
+	li x1,0xFFFFFFFF
+	li x2,0xF0F0F0F0
+	li x3,0x00000000
+	li x4,0x0F0F0F0F
+	li x5,0xAAAAAAAA
+	li x6,0x55555555
 
 	slt x7, x1, x2
 	add x31, x31, x7          //update signature
@@ -1072,28 +1426,21 @@ _sbst_alu:
 	add x31, x31, x21         //update signature
 	slt x22, x1, x1
 	add x31, x31, x22         //update signature
-//	REDUNDANT
-//	slt x23, x2, x2
-//	add x31, x31, x23         //update signature
-//	slt x24, x3, x3
-//	add x31, x31, x24         //update signature
-//	slt x25, x4, x4
-//	add x31, x31, x25         //update signature
-//	slt x26, x5, x5
-//	add x31, x31, x26         //update signature
-//	slt x27, x6, x6
-//	add x31, x31, x27          //update signature
+	slt x23, x2, x2
+	add x31, x31, x23         //update signature
+	slt x24, x3, x3
+	add x31, x31, x24         //update signature
+	slt x25, x4, x4
+	add x31, x31, x25         //update signature
+	slt x26, x5, x5
+	add x31, x31, x26         //update signature
+	slt x27, x6, x6
+	add x31, x31, x27          //update signature
 
 
 ///////// SHIFT OPERATIONS /////////
 
-	//new registers obtained using signature as random value
-	add x1, x1, x31
-	add x2, x2, x31
-	add x3, x3, x31
-	add x4, x4, x31
-	add x5, x5, x31
-	add x6, x6, x31
+
 
 	//shifting values
 	li x7, 1
@@ -1178,13 +1525,6 @@ _sbst_alu:
 		add x31, x31, x30         //update signature
 
 
-	//new registers obtained using signature as random value
-	add x1, x1, x31
-	add x2, x2, x31
-	add x3, x3, x31
-	add x4, x4, x31
-	add x5, x5, x31
-	add x6, x6, x31
 
      //SRL
 
@@ -1262,13 +1602,7 @@ _sbst_alu:
 		add x31, x31, x30         //update signature
 
 
-	//new registers obtained using signature as random value
-	add x1, x1, x31
-	add x2, x2, x31
-	add x3, x3, x31
-	add x4, x4, x31
-	add x5, x5, x31
-	add x6, x6, x31
+
 
      //SRA
 
@@ -1409,6 +1743,15 @@ _sbst_alu:
 
 	//DIVU
 
+	li x1,0x00000001
+	li x2,0xF0F0F0F0
+	li x3,0x0F0F0F0F
+	li x4,0x0000FFFF
+	li x5,0xFFFF0000
+	li x6,0xFFFFFFFF
+	li x7,0x55555555
+	li x8,0xAAAAAAAA
+
 	divu x9, x2, x1
 	add x31, x31, x9         //update signature
 	divu x10, x2, x3
@@ -1458,6 +1801,15 @@ _sbst_alu:
 
 	//REM
 
+	li x1,0x00000001
+	li x2,0xF0F0F0F0
+	li x3,0x0F0F0F0F
+	li x4,0x0000FFFF
+	li x5,0xFFFF0000
+	li x6,0xFFFFFFFF
+	li x7,0x55555555
+	li x8,0xAAAAAAAA
+
 	rem x9, x2, x1
 	add x31, x31, x9         //update signature
 	rem x10, x2, x3
@@ -1505,6 +1857,15 @@ _sbst_alu:
 
 
 	//remU
+
+	li x1,0x00000001
+	li x2,0xF0F0F0F0
+	li x3,0x0F0F0F0F
+	li x4,0x0000FFFF
+	li x5,0xFFFF0000
+	li x6,0xFFFFFFFF
+	li x7,0x55555555
+	li x8,0xAAAAAAAA
 
 	remu x9, x2, x1
 	add x31, x31, x9         //update signature
