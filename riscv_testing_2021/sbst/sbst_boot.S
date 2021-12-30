@@ -5,8 +5,7 @@
 _sbst_boot:
 	//add sp, sp, 16		// this creates space in the stack
 
-	lui	a0, %hi(__TEST_DATA_START)
-	addi	a0, a0, %lo(__TEST_DATA_START)
+	
 	
 	// preserve all non-volatile registers (use section .TEST_DATA)
 	//store it in save_regs area
