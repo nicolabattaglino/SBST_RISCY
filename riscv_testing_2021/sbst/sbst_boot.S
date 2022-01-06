@@ -5,8 +5,9 @@
 _sbst_boot:
 	//add sp, sp, 16		// this creates space in the stack
 
-	
-	
+	lui	a0, %hi(__TEST_DATA_START)
+	addi	a0, a0, %lo(__TEST_DATA_START)
+
 	// preserve all non-volatile registers (use section .TEST_DATA)
 	//store it in save_regs area
 	la		x5, save_regs
@@ -26,7 +27,7 @@ _sbst_boot:
 	sw		x25,	13*4(x5)
 	sw		x26,	14*4(x5)
 	sw		x27,	15*4(x5)
-	
+
 
 	// disable interrupts (if they were enabled)
 	li x21, 0x00000000
@@ -36,9 +37,9 @@ _sbst_boot:
 	//use the x20 reg to unset the interrupt
 	csrrc x22, 0x300, x20
 
-	// load values from rf_patterns 
+	// load values from rf_patterns
 	la		x31, RF_PATTERNS
-	lw		x1,	0*4(x31)  	
+	lw		x1,	0*4(x31)
 	lw		x2,	1*4(x31)
 	lw		x3,	2*4(x31)
 	lw		x4,	3*4(x31)
@@ -53,7 +54,7 @@ _sbst_boot:
 	lw		x13,	12*4(x31)
 	lw		x14,	13*4(x31)
 	lw		x15,	14*4(x31)
-	
+
 	add		x1,x1,x2
 	add		x1,x1,x3
 	add		x1,x1,x4
@@ -69,9 +70,9 @@ _sbst_boot:
 	add		x1,x1,x14
 	//store the result of the first addition part in x30 reg
 	add		x1,x1,x15
-	//load second part of values 
+	//load second part of values
 	la		x2, RF_PATTERNS
-	lw		x16,	15*4(x2)  	
+	lw		x16,	15*4(x2)
 	lw		x17,	16*4(x2)
 	lw		x18,	17*4(x2)
 	lw		x19,	18*4(x2)
@@ -105,20 +106,20 @@ _sbst_boot:
 	add		x1,x1,x30
 	// store the value of the first and the second part of the addition in x1 register
 	add		x1,x1,x31
-	
+
 	//store value in signature
 	la x31, signature
 	sw x1,0*4(x31)
 
-	// write the result (check label 'test_result') 
+	// write the result (check label 'test_result')
 	la x31,test_result
 	sw x1,0*4(x31)
-	
+
 	li x1, 0x00000001
 	addi x1,x1,2
 	not x1,x1
 	addi x1,x1,3
-	
+
 	// restore interrupts (if they were active before!)
 	// in x20 there is the vector with the previuos active interrupts
 	// set interrupts
@@ -192,7 +193,7 @@ RF_PATTERNS:
 	.long 0x0000001D
 	.long 0x0000001E
 	.long 0x0000001F
-	
+
 
 
 

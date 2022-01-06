@@ -35,8 +35,6 @@ _sbst_alu:
 	li x4,0x0F0F0F0F
 	li x5,0xAAAAAAAA
 	li x6,0x55555555
-	li x7,0x11111111
-	li x8,0xCCCCCCCC
 
 	//ADDI
 	addi x30,x1,0x001
@@ -83,9 +81,6 @@ _sbst_alu:
 	add x31, x31, x10          //update signature
 	addi x9,x5,0x2AA
 	add x31, x31, x9          //update signature
-
-
-/************
 	addi x8,x5,0x555
 	add x31, x31, x8          //update signature
 	addi x7,x5,0x7FF
@@ -98,28 +93,40 @@ _sbst_alu:
 	add x31, x31, x3          //update signature
 	addi x2,x6,0x555
 	add x31, x31, x2          //update signature
-	addi x1,x6,0x7FF
-	add x31, x31, x1          //update signature
-***************/
+//	addi x1,x6,0x7FF
+//	add x31, x31, x1          //update signature
 
-	addi x30,x7,0x001
-	add x31, x31, x30          //update signature
-	addi x29,x7,0x2AA
-	add x31, x31, x29          //update signature
-	addi x28,x7,0x555
-	add x31, x31, x28          //update signature
-	addi x27,x7,0x7FF
-	add x31, x31, x27          //update signature
-	addi x26,x8,0x000
-	add x31, x31, x26          //update signature
-	addi x25,x8,0x001
-	add x31, x31, x25          //update signature
-	addi x24,x8,0x2AA
-	add x31, x31, x24          //update signature
-	addi x23,x8,0x555
-	add x31, x31, x23          //update signature
-	addi x22,x8,0x7FF
-	add x31, x31, x22          //update signature
+	la x1, loandst
+	sw x2, 0(x1)
+	sw x3, 4(x1)
+	sw x4, 8(x1)
+	sw x5, 12(x1)
+	sw x6, 16(x1)
+	sw x7, 20(x1)
+	sw x8, 24(x1)
+	sw x9, 28(x1)
+	sw x10, 32(x1)
+	sw x11, 36(x1)
+	sw x12, 40(x1)
+	sw x13, 44(x1)
+	sw x14, 48(x1)
+	sw x15, 52(x1)
+	sw x16, 56(x1)
+	sw x17, 60(x1)
+	sw x18, 64(x1)
+	sw x19, 68(x1)
+	sw x20, 72(x1)
+	sw x21, 76(x1)
+	sw x22, 80(x1)
+	sw x23, 84(x1)
+	sw x24, 88(x1)
+	sw x25, 92(x1)
+	sw x26, 96(x1)
+	sw x27, 100(x1)
+	sw x28, 104(x1)
+	sw x29, 108(x1)
+	sw x30, 112(x1)
+
 
 
 	// ANDI
@@ -130,8 +137,6 @@ _sbst_alu:
 	li x4,0x0F0F0F0F
 	li x5,0xAAAAAAAA
 	li x6,0x55555555
-	li x7,0x11111111
-	li x8,0xCCCCCCCC
 
 	andi x30,x1,0x001
 	add x31, x31, x30          //update signature
@@ -177,8 +182,6 @@ _sbst_alu:
 	add x31, x31, x10          //update signature
 	andi x9,x5,0x2AA
 	add x31, x31, x9          //update signature
-
-/***********************
 	andi x8,x5,0x555
 	add x31, x31, x8          //update signature
 	andi x7,x5,0x7FF
@@ -191,28 +194,39 @@ _sbst_alu:
 	add x31, x31, x3          //update signature
 	andi x2,x6,0x555
 	add x31, x31, x2          //update signature
-	andi x1,x6,0x7FF
-	add x31, x31, x1          //update signature
-************************/
+//	andi x1,x6,0x7FF
+//	add x31, x31, x1          //update signature
 
-	andi x30,x7,0x001
-	add x31, x31, x30          //update signature
-	andi x29,x7,0x2AA
-	add x31, x31, x29          //update signature
-	andi x28,x7,0x555
-	add x31, x31, x28          //update signature
-	andi x27,x7,0x7FF
-	add x31, x31, x27          //update signature
-	andi x26,x8,0x000
-	add x31, x31, x26          //update signature
-	andi x25,x8,0x001
-	add x31, x31, x25          //update signature
-	andi x24,x8,0x2AA
-	add x31, x31, x24          //update signature
-	andi x23,x8,0x555
-	add x31, x31, x23          //update signature
-	andi x22,x8,0x7FF
-	add x31, x31, x22          //update signature
+	la x1, loandst
+	sw x2, 0(x1)
+	sw x3, 4(x1)
+	sw x4, 8(x1)
+	sw x5, 12(x1)
+	sw x6, 16(x1)
+	sw x7, 20(x1)
+	sw x8, 24(x1)
+	sw x9, 28(x1)
+	sw x10, 32(x1)
+	sw x11, 36(x1)
+	sw x12, 40(x1)
+	sw x13, 44(x1)
+	sw x14, 48(x1)
+	sw x15, 52(x1)
+	sw x16, 56(x1)
+	sw x17, 60(x1)
+	sw x18, 64(x1)
+	sw x19, 68(x1)
+	sw x20, 72(x1)
+	sw x21, 76(x1)
+	sw x22, 80(x1)
+	sw x23, 84(x1)
+	sw x24, 88(x1)
+	sw x25, 92(x1)
+	sw x26, 96(x1)
+	sw x27, 100(x1)
+	sw x28, 104(x1)
+	sw x29, 108(x1)
+	sw x30, 112(x1)
 
 
 
@@ -224,8 +238,6 @@ _sbst_alu:
 	li x4,0x0F0F0F0F
 	li x5,0xAAAAAAAA
 	li x6,0x55555555
-	li x7,0x11111111
-	li x8,0xCCCCCCCC
 
 	ori x30,x1,0x001
 	add x31, x31, x30          //update signature
@@ -271,8 +283,6 @@ _sbst_alu:
 	add x31, x31, x10          //update signature
 	ori x9,x5,0x2AA
 	add x31, x31, x9          //update signature
-
-/****************************
 	ori x8,x5,0x555
 	add x31, x31, x8          //update signature
 	ori x7,x5,0x7FF
@@ -285,28 +295,39 @@ _sbst_alu:
 	add x31, x31, x3          //update signature
 	ori x2,x6,0x555
 	add x31, x31, x2          //update signature
-	ori x1,x6,0x7FF
-	add x31, x31, x1          //update signature
-*******************************/
+//	ori x1,x6,0x7FF
+//	add x31, x31, x1          //update signature
 
-	ori x30,x7,0x001
-	add x31, x31, x30          //update signature
-	ori x29,x7,0x2AA
-	add x31, x31, x29          //update signature
-	ori x28,x7,0x555
-	add x31, x31, x28          //update signature
-	ori x27,x7,0x7FF
-	add x31, x31, x27          //update signature
-	ori x26,x8,0x000
-	add x31, x31, x26          //update signature
-	ori x25,x8,0x001
-	add x31, x31, x25          //update signature
-	ori x24,x8,0x2AA
-	add x31, x31, x24          //update signature
-	ori x23,x8,0x555
-	add x31, x31, x23          //update signature
-	ori x22,x8,0x7FF
-	add x31, x31, x22          //update signature
+	la x1, loandst
+	sw x2, 0(x1)
+	sw x3, 4(x1)
+	sw x4, 8(x1)
+	sw x5, 12(x1)
+	sw x6, 16(x1)
+	sw x7, 20(x1)
+	sw x8, 24(x1)
+	sw x9, 28(x1)
+	sw x10, 32(x1)
+	sw x11, 36(x1)
+	sw x12, 40(x1)
+	sw x13, 44(x1)
+	sw x14, 48(x1)
+	sw x15, 52(x1)
+	sw x16, 56(x1)
+	sw x17, 60(x1)
+	sw x18, 64(x1)
+	sw x19, 68(x1)
+	sw x20, 72(x1)
+	sw x21, 76(x1)
+	sw x22, 80(x1)
+	sw x23, 84(x1)
+	sw x24, 88(x1)
+	sw x25, 92(x1)
+	sw x26, 96(x1)
+	sw x27, 100(x1)
+	sw x28, 104(x1)
+	sw x29, 108(x1)
+	sw x30, 112(x1)
 
 
 
@@ -318,8 +339,6 @@ _sbst_alu:
 	li x4,0x0F0F0F0F
 	li x5,0xAAAAAAAA
 	li x6,0x55555555
-	li x7,0x11111111
-	li x8,0xCCCCCCCC
 
 	xori x30,x1,0x001
 	add x31, x31, x30          //update signature
@@ -365,7 +384,6 @@ _sbst_alu:
 	add x31, x31, x10          //update signature
 	xori x9,x5,0x2AA
 	add x31, x31, x9          //update signature
-/**************************
 	xori x8,x5,0x555
 	add x31, x31, x8          //update signature
 	xori x7,x5,0x7FF
@@ -378,28 +396,39 @@ _sbst_alu:
 	add x31, x31, x3          //update signature
 	xori x2,x6,0x555
 	add x31, x31, x2          //update signature
-	xori x1,x6,0x7FF
-	add x31, x31, x1          //update signature
-**************************/
+//	xori x1,x6,0x7FF
+//	add x31, x31, x1          //update signature
 
-	xori x30,x7,0x001
-	add x31, x31, x30          //update signature
-	xori x29,x7,0x2AA
-	add x31, x31, x29          //update signature
-	xori x28,x7,0x555
-	add x31, x31, x28          //update signature
-	xori x27,x7,0x7FF
-	add x31, x31, x27          //update signature
-	xori x26,x8,0x000
-	add x31, x31, x26          //update signature
-	xori x25,x8,0x001
-	add x31, x31, x25          //update signature
-	xori x24,x8,0x2AA
-	add x31, x31, x24          //update signature
-	xori x23,x8,0x555
-	add x31, x31, x23          //update signature
-	xori x22,x8,0x7FF
-	add x31, x31, x22          //update signature
+	la x1, loandst
+	sw x2, 0(x1)
+	sw x3, 4(x1)
+	sw x4, 8(x1)
+	sw x5, 12(x1)
+	sw x6, 16(x1)
+	sw x7, 20(x1)
+	sw x8, 24(x1)
+	sw x9, 28(x1)
+	sw x10, 32(x1)
+	sw x11, 36(x1)
+	sw x12, 40(x1)
+	sw x13, 44(x1)
+	sw x14, 48(x1)
+	sw x15, 52(x1)
+	sw x16, 56(x1)
+	sw x17, 60(x1)
+	sw x18, 64(x1)
+	sw x19, 68(x1)
+	sw x20, 72(x1)
+	sw x21, 76(x1)
+	sw x22, 80(x1)
+	sw x23, 84(x1)
+	sw x24, 88(x1)
+	sw x25, 92(x1)
+	sw x26, 96(x1)
+	sw x27, 100(x1)
+	sw x28, 104(x1)
+	sw x29, 108(x1)
+	sw x30, 112(x1)
 
 
 
@@ -411,8 +440,6 @@ _sbst_alu:
 	li x4,0x0F0F0F0F
 	li x5,0xAAAAAAAA
 	li x6,0x55555555
-	li x7,0x11111111
-	li x8,0xCCCCCCCC
 
 	slti x30,x1,0x001
 	add x31, x31, x30          //update signature
@@ -458,8 +485,6 @@ _sbst_alu:
 	add x31, x31, x10          //update signature
 	slti x9,x5,0x2AA
 	add x31, x31, x9          //update signature
-
-/*****************
 	slti x8,x5,0x555
 	add x31, x31, x8          //update signature
 	slti x7,x5,0x7FF
@@ -472,28 +497,39 @@ _sbst_alu:
 	add x31, x31, x3          //update signature
 	slti x2,x6,0x555
 	add x31, x31, x2          //update signature
-	slti x1,x6,0x7FF
-	add x31, x31, x1          //update signature
-*****************/
+//	slti x1,x6,0x7FF
+//	add x31, x31, x1          //update signature
 
-	slti x30,x7,0x001
-	add x31, x31, x30          //update signature
-	slti x29,x7,0x2AA
-	add x31, x31, x29          //update signature
-	slti x28,x7,0x555
-	add x31, x31, x28          //update signature
-	slti x27,x7,0x7FF
-	add x31, x31, x27          //update signature
-	slti x26,x8,0x000
-	add x31, x31, x26          //update signature
-	slti x25,x8,0x001
-	add x31, x31, x25          //update signature
-	slti x24,x8,0x2AA
-	add x31, x31, x24          //update signature
-	slti x23,x8,0x555
-	add x31, x31, x23          //update signature
-	slti x22,x8,0x7FF
-	add x31, x31, x22          //update signature
+	la x1, loandst
+	sw x2, 0(x1)
+	sw x3, 4(x1)
+	sw x4, 8(x1)
+	sw x5, 12(x1)
+	sw x6, 16(x1)
+	sw x7, 20(x1)
+	sw x8, 24(x1)
+	sw x9, 28(x1)
+	sw x10, 32(x1)
+	sw x11, 36(x1)
+	sw x12, 40(x1)
+	sw x13, 44(x1)
+	sw x14, 48(x1)
+	sw x15, 52(x1)
+	sw x16, 56(x1)
+	sw x17, 60(x1)
+	sw x18, 64(x1)
+	sw x19, 68(x1)
+	sw x20, 72(x1)
+	sw x21, 76(x1)
+	sw x22, 80(x1)
+	sw x23, 84(x1)
+	sw x24, 88(x1)
+	sw x25, 92(x1)
+	sw x26, 96(x1)
+	sw x27, 100(x1)
+	sw x28, 104(x1)
+	sw x29, 108(x1)
+	sw x30, 112(x1)
 
 
 
@@ -505,8 +541,6 @@ _sbst_alu:
 	li x4,0x0F0F0F0F
 	li x5,0xAAAAAAAA
 	li x6,0x55555555
-	li x7,0x11111111
-	li x8,0xCCCCCCCC
 
 	sltiu x30,x1,0x001
 	add x31, x31, x30          //update signature
@@ -552,8 +586,6 @@ _sbst_alu:
 	add x31, x31, x10          //update signature
 	sltiu x9,x5,0x2AA
 	add x31, x31, x9          //update signature
-
-/***********************
 	sltiu x8,x5,0x555
 	add x31, x31, x8          //update signature
 	sltiu x7,x5,0x7FF
@@ -566,28 +598,39 @@ _sbst_alu:
 	add x31, x31, x3          //update signature
 	sltiu x2,x6,0x555
 	add x31, x31, x2          //update signature
-	sltiu x1,x6,0x7FF
-	add x31, x31, x1          //update signature
-***************************/
+//	sltiu x1,x6,0x7FF
+//	add x31, x31, x1          //update signature
 
-	sltiu x30,x7,0x001
-	add x31, x31, x30          //update signature
-	sltiu x29,x7,0x2AA
-	add x31, x31, x29          //update signature
-	sltiu x28,x7,0x555
-	add x31, x31, x28          //update signature
-	sltiu x27,x7,0x7FF
-	add x31, x31, x27          //update signature
-	sltiu x26,x8,0x000
-	add x31, x31, x26          //update signature
-	sltiu x25,x8,0x001
-	add x31, x31, x25          //update signature
-	sltiu x24,x8,0x2AA
-	add x31, x31, x24          //update signature
-	sltiu x23,x8,0x555
-	add x31, x31, x23          //update signature
-	sltiu x22,x8,0x7FF
-	add x31, x31, x22          //update signature
+	la x1, loandst
+	sw x2, 0(x1)
+	sw x3, 4(x1)
+	sw x4, 8(x1)
+	sw x5, 12(x1)
+	sw x6, 16(x1)
+	sw x7, 20(x1)
+	sw x8, 24(x1)
+	sw x9, 28(x1)
+	sw x10, 32(x1)
+	sw x11, 36(x1)
+	sw x12, 40(x1)
+	sw x13, 44(x1)
+	sw x14, 48(x1)
+	sw x15, 52(x1)
+	sw x16, 56(x1)
+	sw x17, 60(x1)
+	sw x18, 64(x1)
+	sw x19, 68(x1)
+	sw x20, 72(x1)
+	sw x21, 76(x1)
+	sw x22, 80(x1)
+	sw x23, 84(x1)
+	sw x24, 88(x1)
+	sw x25, 92(x1)
+	sw x26, 96(x1)
+	sw x27, 100(x1)
+	sw x28, 104(x1)
+	sw x29, 108(x1)
+	sw x30, 112(x1)
 
 
 ///////// AUIPC ///////////
@@ -650,8 +693,40 @@ _sbst_alu:
 	add x31, x31, x3          //update signature
 	lui x2,0x20123
 	add x31, x31, x2          //update signature
-	lui x1,0x3C7D1
-	add x31, x31, x1          //update signature
+//	lui x1,0x3C7D1
+//	add x31, x31, x1          //update signature
+
+	la x1, loandst
+	sw x2, 0(x1)
+	sw x3, 4(x1)
+	sw x4, 8(x1)
+	sw x5, 12(x1)
+	sw x6, 16(x1)
+	sw x7, 20(x1)
+	sw x8, 24(x1)
+	sw x9, 28(x1)
+	sw x10, 32(x1)
+	sw x11, 36(x1)
+	sw x12, 40(x1)
+	sw x13, 44(x1)
+	sw x14, 48(x1)
+	sw x15, 52(x1)
+	sw x16, 56(x1)
+	sw x17, 60(x1)
+	sw x18, 64(x1)
+	sw x19, 68(x1)
+	sw x20, 72(x1)
+	sw x21, 76(x1)
+	sw x22, 80(x1)
+	sw x23, 84(x1)
+	sw x24, 88(x1)
+	sw x25, 92(x1)
+	sw x26, 96(x1)
+	sw x27, 100(x1)
+	sw x28, 104(x1)
+	sw x29, 108(x1)
+	sw x30, 112(x1)
+
 
 
 	//AUIPC
@@ -713,8 +788,40 @@ _sbst_alu:
 	add x31, x31, x3          //update signature
 	auipc x2,0x20123
 	add x31, x31, x2          //update signature
-	auipc x1,0x3C7D1
-	add x31, x31, x1          //update signature
+//	auipc x1,0x3C7D1
+//	add x31, x31, x1          //update signature
+
+	la x1, loandst
+	sw x2, 0(x1)
+	sw x3, 4(x1)
+	sw x4, 8(x1)
+	sw x5, 12(x1)
+	sw x6, 16(x1)
+	sw x7, 20(x1)
+	sw x8, 24(x1)
+	sw x9, 28(x1)
+	sw x10, 32(x1)
+	sw x11, 36(x1)
+	sw x12, 40(x1)
+	sw x13, 44(x1)
+	sw x14, 48(x1)
+	sw x15, 52(x1)
+	sw x16, 56(x1)
+	sw x17, 60(x1)
+	sw x18, 64(x1)
+	sw x19, 68(x1)
+	sw x20, 72(x1)
+	sw x21, 76(x1)
+	sw x22, 80(x1)
+	sw x23, 84(x1)
+	sw x24, 88(x1)
+	sw x25, 92(x1)
+	sw x26, 96(x1)
+	sw x27, 100(x1)
+	sw x28, 104(x1)
+	sw x29, 108(x1)
+	sw x30, 112(x1)
+
 
 
 ///////// SHIFT OPERATIONS /////////
@@ -766,6 +873,27 @@ _sbst_alu:
 	     add x31, x31, x29         //update signature
      slli x30, x3, 24
 	     add x31, x31, x30         //update signature
+
+		la x9, loandst
+		sw x13, 0(x9)
+		sw x14, 4(x9)
+		sw x15, 8(x9)
+		sw x16, 12(x9)
+		sw x17, 16(x9)
+		sw x18, 20(x9)
+		sw x19, 24(x9)
+		sw x20, 28(x9)
+		sw x21, 32(x9)
+		sw x22, 36(x9)
+		sw x23, 40(x9)
+		sw x24, 44(x9)
+		sw x25, 48(x9)
+		sw x26, 52(x9)
+		sw x27, 56(x9)
+		sw x28, 60(x9)
+		sw x29, 64(x9)
+		sw x30, 68(x9)
+
 	slli x13, x4, 1
 	     add x31, x31, x13         //update signature
      slli x14, x4, 2
@@ -803,6 +931,25 @@ _sbst_alu:
 	slli x30, x6, 24
 		add x31, x31, x30         //update signature
 
+		la x9, loandst
+		sw x13, 0(x9)
+		sw x14, 4(x9)
+		sw x15, 8(x9)
+		sw x16, 12(x9)
+		sw x17, 16(x9)
+		sw x18, 20(x9)
+		sw x19, 24(x9)
+		sw x20, 28(x9)
+		sw x21, 32(x9)
+		sw x22, 36(x9)
+		sw x23, 40(x9)
+		sw x24, 44(x9)
+		sw x25, 48(x9)
+		sw x26, 52(x9)
+		sw x27, 56(x9)
+		sw x28, 60(x9)
+		sw x29, 64(x9)
+		sw x30, 68(x9)
 
 
 
@@ -851,6 +998,27 @@ _sbst_alu:
 	     add x31, x31, x29         //update signature
      srli x30, x3, 24
 	     add x31, x31, x30         //update signature
+
+		la x9, loandst
+		sw x13, 0(x9)
+		sw x14, 4(x9)
+		sw x15, 8(x9)
+		sw x16, 12(x9)
+		sw x17, 16(x9)
+		sw x18, 20(x9)
+		sw x19, 24(x9)
+		sw x20, 28(x9)
+		sw x21, 32(x9)
+		sw x22, 36(x9)
+		sw x23, 40(x9)
+		sw x24, 44(x9)
+		sw x25, 48(x9)
+		sw x26, 52(x9)
+		sw x27, 56(x9)
+		sw x28, 60(x9)
+		sw x29, 64(x9)
+		sw x30, 68(x9)
+
 	srli x13, x4, 1
 	     add x31, x31, x13         //update signature
      srli x14, x4, 2
@@ -887,6 +1055,26 @@ _sbst_alu:
 		add x31, x31, x29         //update signature
 	srli x30, x6, 24
 		add x31, x31, x30         //update signature
+
+		la x9, loandst
+		sw x13, 0(x9)
+		sw x14, 4(x9)
+		sw x15, 8(x9)
+		sw x16, 12(x9)
+		sw x17, 16(x9)
+		sw x18, 20(x9)
+		sw x19, 24(x9)
+		sw x20, 28(x9)
+		sw x21, 32(x9)
+		sw x22, 36(x9)
+		sw x23, 40(x9)
+		sw x24, 44(x9)
+		sw x25, 48(x9)
+		sw x26, 52(x9)
+		sw x27, 56(x9)
+		sw x28, 60(x9)
+		sw x29, 64(x9)
+		sw x30, 68(x9)
 
 
 
@@ -936,6 +1124,27 @@ _sbst_alu:
 	     add x31, x31, x29         //update signature
      srai x30, x3, 24
 	     add x31, x31, x30         //update signature
+
+		la x9, loandst
+		sw x13, 0(x9)
+		sw x14, 4(x9)
+		sw x15, 8(x9)
+		sw x16, 12(x9)
+		sw x17, 16(x9)
+		sw x18, 20(x9)
+		sw x19, 24(x9)
+		sw x20, 28(x9)
+		sw x21, 32(x9)
+		sw x22, 36(x9)
+		sw x23, 40(x9)
+		sw x24, 44(x9)
+		sw x25, 48(x9)
+		sw x26, 52(x9)
+		sw x27, 56(x9)
+		sw x28, 60(x9)
+		sw x29, 64(x9)
+		sw x30, 68(x9)
+
 	srai x13, x4, 1
 	     add x31, x31, x13         //update signature
      srai x14, x4, 2
@@ -973,6 +1182,25 @@ _sbst_alu:
 	srai x30, x6, 24
 		add x31, x31, x30         //update signature
 
+		la x9, loandst
+		sw x13, 0(x9)
+		sw x14, 4(x9)
+		sw x15, 8(x9)
+		sw x16, 12(x9)
+		sw x17, 16(x9)
+		sw x18, 20(x9)
+		sw x19, 24(x9)
+		sw x20, 28(x9)
+		sw x21, 32(x9)
+		sw x22, 36(x9)
+		sw x23, 40(x9)
+		sw x24, 44(x9)
+		sw x25, 48(x9)
+		sw x26, 52(x9)
+		sw x27, 56(x9)
+		sw x28, 60(x9)
+		sw x29, 64(x9)
+		sw x30, 68(x9)
 
 
 
@@ -988,39 +1216,6 @@ _sbst_alu:
 	li x4,0x0F0F0F0F
 	li x5,0xAAAAAAAA
 	li x6,0x55555555
-	li x7,0x11111111
-	li x8,0xCCCCCCCC
-
-////////////// x7 x8 /////////////////
-	add x9, x7, x2
-	add x31, x31, x9          //update signature
-	add x10, x7, x3
-	add x31, x31, x10          //update signature
-	add x11, x7, x4
-	add x31, x31, x11          //update signature
-	add x12, x7, x5
-	add x31, x31, x12          //update signature
-	add x13, x7, x6
-	add x31, x31, x13          //update signature
-	add x14, x7, x7
-	add x31, x31, x14          //update signature
-	add x15, x7, x8
-	add x31, x31, x15          //update signature
-	add x16, x8, x1
-	add x31, x31, x16         //update signature
-	add x17, x8, x2
-	add x31, x31, x17         //update signature
-	add x18, x8, x3
-	add x31, x31, x18         //update signature
-	add x19, x8, x4
-	add x31, x31, x19         //update signature
-	add x20, x8, x5
-	add x31, x31, x20         //update signature
-	add x21, x8, x6
-	add x31, x31, x21         //update signature
-	add x22, x8, x8
-	add x31, x31, x22          //update signature
-///////////////////////////////////////
 
 	add x7, x1, x2
 	add x31, x31, x7          //update signature
@@ -1065,7 +1260,33 @@ _sbst_alu:
 	add x27, x6, x6
 	add x31, x31, x27          //update signature
 
-
+	la x1, loandst
+	sw x2, 0(x1)
+	sw x3, 4(x1)
+	sw x4, 8(x1)
+	sw x5, 12(x1)
+	sw x6, 16(x1)
+	sw x7, 20(x1)
+	sw x8, 24(x1)
+	sw x9, 28(x1)
+	sw x10, 32(x1)
+	sw x11, 36(x1)
+	sw x12, 40(x1)
+	sw x13, 44(x1)
+	sw x14, 48(x1)
+	sw x15, 52(x1)
+	sw x16, 56(x1)
+	sw x17, 60(x1)
+	sw x18, 64(x1)
+	sw x19, 68(x1)
+	sw x20, 72(x1)
+	sw x21, 76(x1)
+	sw x22, 80(x1)
+	sw x23, 84(x1)
+	sw x24, 88(x1)
+	sw x25, 92(x1)
+	sw x26, 96(x1)
+	sw x27, 100(x1)
 
 
      //SUB
@@ -1076,39 +1297,6 @@ _sbst_alu:
 	li x4,0x0F0F0F0F
 	li x5,0xAAAAAAAA
 	li x6,0x55555555
-	li x7,0x11111111
-	li x8,0xCCCCCCCC
-
-////////////// x7 x8 /////////////////
-	sub x9, x7, x2
-	add x31, x31, x9          //update signature
-	sub x10, x7, x3
-	add x31, x31, x10          //update signature
-	sub x11, x7, x4
-	add x31, x31, x11          //update signature
-	sub x12, x7, x5
-	add x31, x31, x12          //update signature
-	sub x13, x7, x6
-	add x31, x31, x13          //update signature
-	sub x14, x7, x7
-	add x31, x31, x14          //update signature
-	sub x15, x7, x8
-	add x31, x31, x15          //update signature
-	sub x16, x8, x1
-	add x31, x31, x16         //update signature
-	sub x17, x8, x2
-	add x31, x31, x17         //update signature
-	sub x18, x8, x3
-	add x31, x31, x18         //update signature
-	sub x19, x8, x4
-	add x31, x31, x19         //update signature
-	sub x20, x8, x5
-	add x31, x31, x20         //update signature
-	sub x21, x8, x6
-	add x31, x31, x21         //update signature
-	sub x22, x8, x8
-	add x31, x31, x22          //update signature
-///////////////////////////////////////
 
 	sub x7, x1, x2
 	add x31, x31, x7          //update signature
@@ -1153,7 +1341,33 @@ _sbst_alu:
 	sub x27, x6, x6
 	add x31, x31, x27          //update signature
 
-
+	la x1, loandst
+	sw x2, 0(x1)
+	sw x3, 4(x1)
+	sw x4, 8(x1)
+	sw x5, 12(x1)
+	sw x6, 16(x1)
+	sw x7, 20(x1)
+	sw x8, 24(x1)
+	sw x9, 28(x1)
+	sw x10, 32(x1)
+	sw x11, 36(x1)
+	sw x12, 40(x1)
+	sw x13, 44(x1)
+	sw x14, 48(x1)
+	sw x15, 52(x1)
+	sw x16, 56(x1)
+	sw x17, 60(x1)
+	sw x18, 64(x1)
+	sw x19, 68(x1)
+	sw x20, 72(x1)
+	sw x21, 76(x1)
+	sw x22, 80(x1)
+	sw x23, 84(x1)
+	sw x24, 88(x1)
+	sw x25, 92(x1)
+	sw x26, 96(x1)
+	sw x27, 100(x1)
 
 
      //AND
@@ -1164,39 +1378,6 @@ _sbst_alu:
 	li x4,0x0F0F0F0F
 	li x5,0xAAAAAAAA
 	li x6,0x55555555
-	li x7,0x11111111
-	li x8,0xCCCCCCCC
-
-////////////// x7 x8 /////////////////
-	and x9, x7, x2
-	add x31, x31, x9          //update signature
-	and x10, x7, x3
-	add x31, x31, x10          //update signature
-	and x11, x7, x4
-	add x31, x31, x11          //update signature
-	and x12, x7, x5
-	add x31, x31, x12          //update signature
-	and x13, x7, x6
-	add x31, x31, x13          //update signature
-	and x14, x7, x7
-	add x31, x31, x14          //update signature
-	and x15, x7, x8
-	add x31, x31, x15          //update signature
-	and x16, x8, x1
-	add x31, x31, x16         //update signature
-	and x17, x8, x2
-	add x31, x31, x17         //update signature
-	and x18, x8, x3
-	add x31, x31, x18         //update signature
-	and x19, x8, x4
-	add x31, x31, x19         //update signature
-	and x20, x8, x5
-	add x31, x31, x20         //update signature
-	and x21, x8, x6
-	add x31, x31, x21         //update signature
-	and x22, x8, x8
-	add x31, x31, x22          //update signature
-///////////////////////////////////////
 
 	and x7, x1, x2
 	add x31, x31, x7          //update signature
@@ -1241,6 +1422,33 @@ _sbst_alu:
 	and x27, x6, x6
 	add x31, x31, x27          //update signature
 
+	la x1, loandst
+	sw x2, 0(x1)
+	sw x3, 4(x1)
+	sw x4, 8(x1)
+	sw x5, 12(x1)
+	sw x6, 16(x1)
+	sw x7, 20(x1)
+	sw x8, 24(x1)
+	sw x9, 28(x1)
+	sw x10, 32(x1)
+	sw x11, 36(x1)
+	sw x12, 40(x1)
+	sw x13, 44(x1)
+	sw x14, 48(x1)
+	sw x15, 52(x1)
+	sw x16, 56(x1)
+	sw x17, 60(x1)
+	sw x18, 64(x1)
+	sw x19, 68(x1)
+	sw x20, 72(x1)
+	sw x21, 76(x1)
+	sw x22, 80(x1)
+	sw x23, 84(x1)
+	sw x24, 88(x1)
+	sw x25, 92(x1)
+	sw x26, 96(x1)
+	sw x27, 100(x1)
 
 
      //OR
@@ -1251,39 +1459,6 @@ _sbst_alu:
 	li x4,0x0F0F0F0F
 	li x5,0xAAAAAAAA
 	li x6,0x55555555
-	li x7,0x11111111
-	li x8,0xCCCCCCCC
-
-////////////// x7 x8 /////////////////
-	or x9, x7, x2
-	add x31, x31, x9          //update signature
-	or x10, x7, x3
-	add x31, x31, x10          //update signature
-	or x11, x7, x4
-	add x31, x31, x11          //update signature
-	or x12, x7, x5
-	add x31, x31, x12          //update signature
-	or x13, x7, x6
-	add x31, x31, x13          //update signature
-	or x14, x7, x7
-	add x31, x31, x14          //update signature
-	or x15, x7, x8
-	add x31, x31, x15          //update signature
-	or x16, x8, x1
-	add x31, x31, x16         //update signature
-	or x17, x8, x2
-	add x31, x31, x17         //update signature
-	or x18, x8, x3
-	add x31, x31, x18         //update signature
-	or x19, x8, x4
-	add x31, x31, x19         //update signature
-	or x20, x8, x5
-	add x31, x31, x20         //update signature
-	or x21, x8, x6
-	add x31, x31, x21         //update signature
-	or x22, x8, x8
-	add x31, x31, x22          //update signature
-///////////////////////////////////////
 
 	or x7, x1, x2
 	add x31, x31, x7          //update signature
@@ -1328,6 +1503,33 @@ _sbst_alu:
 	or x27, x6, x6
 	add x31, x31, x27          //update signature
 
+	la x1, loandst
+	sw x2, 0(x1)
+	sw x3, 4(x1)
+	sw x4, 8(x1)
+	sw x5, 12(x1)
+	sw x6, 16(x1)
+	sw x7, 20(x1)
+	sw x8, 24(x1)
+	sw x9, 28(x1)
+	sw x10, 32(x1)
+	sw x11, 36(x1)
+	sw x12, 40(x1)
+	sw x13, 44(x1)
+	sw x14, 48(x1)
+	sw x15, 52(x1)
+	sw x16, 56(x1)
+	sw x17, 60(x1)
+	sw x18, 64(x1)
+	sw x19, 68(x1)
+	sw x20, 72(x1)
+	sw x21, 76(x1)
+	sw x22, 80(x1)
+	sw x23, 84(x1)
+	sw x24, 88(x1)
+	sw x25, 92(x1)
+	sw x26, 96(x1)
+	sw x27, 100(x1)
 
 
 
@@ -1383,6 +1585,33 @@ _sbst_alu:
 	xor x27, x6, x6
 	add x31, x31, x27          //update signature
 
+	la x1, loandst
+	sw x2, 0(x1)
+	sw x3, 4(x1)
+	sw x4, 8(x1)
+	sw x5, 12(x1)
+	sw x6, 16(x1)
+	sw x7, 20(x1)
+	sw x8, 24(x1)
+	sw x9, 28(x1)
+	sw x10, 32(x1)
+	sw x11, 36(x1)
+	sw x12, 40(x1)
+	sw x13, 44(x1)
+	sw x14, 48(x1)
+	sw x15, 52(x1)
+	sw x16, 56(x1)
+	sw x17, 60(x1)
+	sw x18, 64(x1)
+	sw x19, 68(x1)
+	sw x20, 72(x1)
+	sw x21, 76(x1)
+	sw x22, 80(x1)
+	sw x23, 84(x1)
+	sw x24, 88(x1)
+	sw x25, 92(x1)
+	sw x26, 96(x1)
+	sw x27, 100(x1)
 
 
 
@@ -1437,10 +1666,125 @@ _sbst_alu:
 	slt x27, x6, x6
 	add x31, x31, x27          //update signature
 
+	la x1, loandst
+	sw x2, 0(x1)
+	sw x3, 4(x1)
+	sw x4, 8(x1)
+	sw x5, 12(x1)
+	sw x6, 16(x1)
+	sw x7, 20(x1)
+	sw x8, 24(x1)
+	sw x9, 28(x1)
+	sw x10, 32(x1)
+	sw x11, 36(x1)
+	sw x12, 40(x1)
+	sw x13, 44(x1)
+	sw x14, 48(x1)
+	sw x15, 52(x1)
+	sw x16, 56(x1)
+	sw x17, 60(x1)
+	sw x18, 64(x1)
+	sw x19, 68(x1)
+	sw x20, 72(x1)
+	sw x21, 76(x1)
+	sw x22, 80(x1)
+	sw x23, 84(x1)
+	sw x24, 88(x1)
+	sw x25, 92(x1)
+	sw x26, 96(x1)
+	sw x27, 100(x1)
+
+
+
+	//SLTU
+	li x1,0xFFFFFFFF
+	li x2,0xF0F0F0F0
+	li x3,0x00000000
+	li x4,0x0F0F0F0F
+	li x5,0xAAAAAAAA
+	li x6,0x55555555
+
+	sltu x7, x1, x2
+	add x31, x31, x7          //update signature
+	sltu x8, x1, x3
+	add x31, x31, x8          //update signature
+	sltu x9, x1, x4
+	add x31, x31, x9          //update signature
+	sltu x10, x1, x5
+	add x31, x31, x10         //update signature
+	sltu x11, x1, x6
+	add x31, x31, x11         //update signature
+	sltu x12, x2, x3
+	add x31, x31, x12         //update signature
+	sltu x13, x2, x4
+	add x31, x31, x13         //update signature
+	sltu x14, x2, x5
+	add x31, x31, x14         //update signature
+	sltu x15, x2, x6
+	add x31, x31, x15         //update signature
+	sltu x16, x3, x4
+	add x31, x31, x16         //update signature
+	sltu x17, x3, x5
+	add x31, x31, x17         //update signature
+	sltu x18, x3, x6
+	add x31, x31, x18         //update signature
+	sltu x19, x4, x5
+	add x31, x31, x19         //update signature
+	sltu x20, x4, x6
+	add x31, x31, x20         //update signature
+	sltu x21, x5, x6
+	add x31, x31, x21         //update signature
+	sltu x22, x1, x1
+	add x31, x31, x22         //update signature
+	sltu x23, x2, x2
+	add x31, x31, x23         //update signature
+	sltu x24, x3, x3
+	add x31, x31, x24         //update signature
+	sltu x25, x4, x4
+	add x31, x31, x25         //update signature
+	sltu x26, x5, x5
+	add x31, x31, x26         //update signature
+	sltu x27, x6, x6
+	add x31, x31, x27          //update signature
+
+	la x1, loandst
+	sw x2, 0(x1)
+	sw x3, 4(x1)
+	sw x4, 8(x1)
+	sw x5, 12(x1)
+	sw x6, 16(x1)
+	sw x7, 20(x1)
+	sw x8, 24(x1)
+	sw x9, 28(x1)
+	sw x10, 32(x1)
+	sw x11, 36(x1)
+	sw x12, 40(x1)
+	sw x13, 44(x1)
+	sw x14, 48(x1)
+	sw x15, 52(x1)
+	sw x16, 56(x1)
+	sw x17, 60(x1)
+	sw x18, 64(x1)
+	sw x19, 68(x1)
+	sw x20, 72(x1)
+	sw x21, 76(x1)
+	sw x22, 80(x1)
+	sw x23, 84(x1)
+	sw x24, 88(x1)
+	sw x25, 92(x1)
+	sw x26, 96(x1)
+	sw x27, 100(x1)
+
+
 
 ///////// SHIFT OPERATIONS /////////
 
-
+	li x1,0xFFFFFFFF
+	li x2,0xF0F0F0F0
+	li x3,0x00000000
+	li x4,0x0F0F0F0F
+	li x5,0xAAAAAAAA
+	li x6,0x55555555
 
 	//shifting values
 	li x7, 1
@@ -1487,6 +1831,30 @@ _sbst_alu:
 	     add x31, x31, x29         //update signature
      sll x30, x3, x12
 	     add x31, x31, x30         //update signature
+
+		la x9, loandst
+		sw x13, 0(x9)
+		sw x14, 4(x9)
+		sw x15, 8(x9)
+		sw x16, 12(x9)
+		sw x17, 16(x9)
+		sw x18, 20(x9)
+		sw x19, 24(x9)
+		sw x20, 28(x9)
+		sw x21, 32(x9)
+		sw x22, 36(x9)
+		sw x23, 40(x9)
+		sw x24, 44(x9)
+		sw x25, 48(x9)
+		sw x26, 52(x9)
+		sw x27, 56(x9)
+		sw x28, 60(x9)
+		sw x29, 64(x9)
+		sw x30, 68(x9)
+
+		//shifting values
+		li x9, 4
+
 	sll x13, x4, x7
 	     add x31, x31, x13         //update signature
      sll x14, x4, x8
@@ -1523,6 +1891,26 @@ _sbst_alu:
 		add x31, x31, x29         //update signature
 	sll x30, x6, x12
 		add x31, x31, x30         //update signature
+
+		la x9, loandst
+		sw x13, 0(x9)
+		sw x14, 4(x9)
+		sw x15, 8(x9)
+		sw x16, 12(x9)
+		sw x17, 16(x9)
+		sw x18, 20(x9)
+		sw x19, 24(x9)
+		sw x20, 28(x9)
+		sw x21, 32(x9)
+		sw x22, 36(x9)
+		sw x23, 40(x9)
+		sw x24, 44(x9)
+		sw x25, 48(x9)
+		sw x26, 52(x9)
+		sw x27, 56(x9)
+		sw x28, 60(x9)
+		sw x29, 64(x9)
+		sw x30, 68(x9)
 
 
 
@@ -1564,6 +1952,30 @@ _sbst_alu:
 	     add x31, x31, x29         //update signature
      srl x30, x3, x12
 	     add x31, x31, x30         //update signature
+
+		la x9, loandst
+		sw x13, 0(x9)
+		sw x14, 4(x9)
+		sw x15, 8(x9)
+		sw x16, 12(x9)
+		sw x17, 16(x9)
+		sw x18, 20(x9)
+		sw x19, 24(x9)
+		sw x20, 28(x9)
+		sw x21, 32(x9)
+		sw x22, 36(x9)
+		sw x23, 40(x9)
+		sw x24, 44(x9)
+		sw x25, 48(x9)
+		sw x26, 52(x9)
+		sw x27, 56(x9)
+		sw x28, 60(x9)
+		sw x29, 64(x9)
+		sw x30, 68(x9)
+
+		//shifting values
+		li x9, 4
+
 	srl x13, x4, x7
 	     add x31, x31, x13         //update signature
      srl x14, x4, x8
@@ -1601,6 +2013,25 @@ _sbst_alu:
 	srl x30, x6, x12
 		add x31, x31, x30         //update signature
 
+		la x9, loandst
+		sw x13, 0(x9)
+		sw x14, 4(x9)
+		sw x15, 8(x9)
+		sw x16, 12(x9)
+		sw x17, 16(x9)
+		sw x18, 20(x9)
+		sw x19, 24(x9)
+		sw x20, 28(x9)
+		sw x21, 32(x9)
+		sw x22, 36(x9)
+		sw x23, 40(x9)
+		sw x24, 44(x9)
+		sw x25, 48(x9)
+		sw x26, 52(x9)
+		sw x27, 56(x9)
+		sw x28, 60(x9)
+		sw x29, 64(x9)
+		sw x30, 68(x9)
 
 
 
@@ -1642,6 +2073,30 @@ _sbst_alu:
 	     add x31, x31, x29         //update signature
      sra x30, x3, x12
 	     add x31, x31, x30         //update signature
+
+		la x9, loandst
+		sw x13, 0(x9)
+		sw x14, 4(x9)
+		sw x15, 8(x9)
+		sw x16, 12(x9)
+		sw x17, 16(x9)
+		sw x18, 20(x9)
+		sw x19, 24(x9)
+		sw x20, 28(x9)
+		sw x21, 32(x9)
+		sw x22, 36(x9)
+		sw x23, 40(x9)
+		sw x24, 44(x9)
+		sw x25, 48(x9)
+		sw x26, 52(x9)
+		sw x27, 56(x9)
+		sw x28, 60(x9)
+		sw x29, 64(x9)
+		sw x30, 68(x9)
+
+		//shifting values
+		li x9, 4
+
 	sra x13, x4, x7
 	     add x31, x31, x13         //update signature
      sra x14, x4, x8
@@ -1679,6 +2134,25 @@ _sbst_alu:
 	sra x30, x6, x12
 		add x31, x31, x30         //update signature
 
+		la x9, loandst
+		sw x13, 0(x9)
+		sw x14, 4(x9)
+		sw x15, 8(x9)
+		sw x16, 12(x9)
+		sw x17, 16(x9)
+		sw x18, 20(x9)
+		sw x19, 24(x9)
+		sw x20, 28(x9)
+		sw x21, 32(x9)
+		sw x22, 36(x9)
+		sw x23, 40(x9)
+		sw x24, 44(x9)
+		sw x25, 48(x9)
+		sw x26, 52(x9)
+		sw x27, 56(x9)
+		sw x28, 60(x9)
+		sw x29, 64(x9)
+		sw x30, 68(x9)
 
 
 //////////// DIVISION ////////////
@@ -1740,6 +2214,30 @@ _sbst_alu:
 	div x30, x8, x7
 	add x31, x31, x30         //update signature
 
+	la x1, loandst
+	sw x9, 28(x1)
+	sw x10, 32(x1)
+	sw x11, 36(x1)
+	sw x12, 40(x1)
+	sw x13, 44(x1)
+	sw x14, 48(x1)
+	sw x15, 52(x1)
+	sw x16, 56(x1)
+	sw x17, 60(x1)
+	sw x18, 64(x1)
+	sw x19, 68(x1)
+	sw x20, 72(x1)
+	sw x21, 76(x1)
+	sw x22, 80(x1)
+	sw x23, 84(x1)
+	sw x24, 88(x1)
+	sw x25, 92(x1)
+	sw x26, 96(x1)
+	sw x27, 100(x1)
+	sw x28, 104(x1)
+	sw x29, 108(x1)
+	sw x30, 112(x1)
+
 
 	//DIVU
 
@@ -1796,6 +2294,30 @@ _sbst_alu:
 	add x31, x31, x29         //update signature
 	divu x30, x8, x7
 	add x31, x31, x30         //update signature
+
+	la x1, loandst
+	sw x9, 28(x1)
+	sw x10, 32(x1)
+	sw x11, 36(x1)
+	sw x12, 40(x1)
+	sw x13, 44(x1)
+	sw x14, 48(x1)
+	sw x15, 52(x1)
+	sw x16, 56(x1)
+	sw x17, 60(x1)
+	sw x18, 64(x1)
+	sw x19, 68(x1)
+	sw x20, 72(x1)
+	sw x21, 76(x1)
+	sw x22, 80(x1)
+	sw x23, 84(x1)
+	sw x24, 88(x1)
+	sw x25, 92(x1)
+	sw x26, 96(x1)
+	sw x27, 100(x1)
+	sw x28, 104(x1)
+	sw x29, 108(x1)
+	sw x30, 112(x1)
 
 
 
@@ -1855,6 +2377,31 @@ _sbst_alu:
 	rem x30, x8, x7
 	add x31, x31, x30         //update signature
 
+	la x1, loandst
+	sw x9, 28(x1)
+	sw x10, 32(x1)
+	sw x11, 36(x1)
+	sw x12, 40(x1)
+	sw x13, 44(x1)
+	sw x14, 48(x1)
+	sw x15, 52(x1)
+	sw x16, 56(x1)
+	sw x17, 60(x1)
+	sw x18, 64(x1)
+	sw x19, 68(x1)
+	sw x20, 72(x1)
+	sw x21, 76(x1)
+	sw x22, 80(x1)
+	sw x23, 84(x1)
+	sw x24, 88(x1)
+	sw x25, 92(x1)
+	sw x26, 96(x1)
+	sw x27, 100(x1)
+	sw x28, 104(x1)
+	sw x29, 108(x1)
+	sw x30, 112(x1)
+
+
 
 	//remU
 
@@ -1912,6 +2459,143 @@ _sbst_alu:
 	remu x30, x8, x7
 	add x31, x31, x30         //update signature
 
+	la x1, loandst
+	sw x9, 28(x1)
+	sw x10, 32(x1)
+	sw x11, 36(x1)
+	sw x12, 40(x1)
+	sw x13, 44(x1)
+	sw x14, 48(x1)
+	sw x15, 52(x1)
+	sw x16, 56(x1)
+	sw x17, 60(x1)
+	sw x18, 64(x1)
+	sw x19, 68(x1)
+	sw x20, 72(x1)
+	sw x21, 76(x1)
+	sw x22, 80(x1)
+	sw x23, 84(x1)
+	sw x24, 88(x1)
+	sw x25, 92(x1)
+	sw x26, 96(x1)
+	sw x27, 100(x1)
+	sw x28, 104(x1)
+	sw x29, 108(x1)
+	sw x30, 112(x1)
+
+
+//////////// JUMP /////////////
+
+	li x1,0x00000001
+	li x2,0xF0F0F0F0
+	li x3,0x0F0F0F0F
+
+	la x4, jump1
+	la x5, jump2
+	la x6, jump3
+	la x7, jump4
+	la x8, jump5
+
+	j jump2
+
+jump1:
+	add x31, x31, x4         //update signature
+	beq x2, x2, jump4
+
+jump2:
+	add x31, x31, x5         //update signature
+	bne x2, x1, jump1
+
+jump3:
+	add x31, x31, x6         //update signature
+	blt x3, x2, jump5
+
+jump4:
+	add x31, x31, x7         //update signature
+	bge x2, x1, jump3
+
+jump5:
+	add x31, x31, x8         //update signature
+
+
+
+/////////////////// LOAD AND STORE //////////////////
+
+
+	li x2,0xF0F0F0F0
+	li x3,0x0F0F0F0F
+	li x4,0x0000FFFF
+	li x5,0xFFFF0000
+	li x6,0xFFFFFFFF
+	li x7,0x55555555
+	li x8,0xAAAAAAAA
+	li x9,0x00000001
+	li x10,0x33333333
+	li x11,0x22222222
+	li x12,0xABABABAB
+	li x13,0xCACACACA
+	li x14,0x00000000
+
+
+	// store values
+	la		x1, loandst
+	sw		x2,	0*4(x1)
+	sw		x3,	1*4(x1)
+	sw		x4,	2*4(x1)
+	sw		x5,	3*4(x1)
+	sw		x6,	4*4(x1)
+	sw		x7,	5*4(x1)
+	sw		x8,	6*4(x1)
+	sw		x9,	7*4(x1)
+	sw		x10,	8*4(x1)
+	sw		x11,	9*4(x1)
+	sw		x12,	10*4(x1)
+	sw		x13,	11*4(x1)
+	sw		x14,	12*4(x1)
+
+	//load values
+	la		x1, loandst
+	lw		x18,	0*4(x1)
+		and 	x15, x18, x2
+		add  x31, x31, x15         //update signature
+
+	lw		x19,	1*4(x1)
+		and 	x15, x19, x3
+		add  x31, x31, x15         //update signature
+
+	lw		x20,	2*4(x1)
+		and 	x15, x20, x4
+		add 	x31, x31, x15         //update signature
+	lw		x21,	3*4(x1)
+		and 	x15, x21, x5
+		add 	x31, x31, x15         //update signature
+	lw		x22,	4*4(x1)
+		and 	x15, x22, x6
+		add 	x31, x31, x15         //update signature
+	lw		x23,	5*4(x1)
+		and 	x15, x23, x7
+		add 	x31, x31, x15         //update signature
+	lw		x24,	6*4(x1)
+		and 	x15, x24, x8
+		add 	x31, x31, x15         //update signature
+	lw		x25,	7*4(x1)
+		and 	x15, x25, x9
+		add 	x31, x31, x15         //update signature
+	lw		x26,	8*4(x1)
+		and 	x15, x26, x10
+		add 	x31, x31, x15         //update signature
+	lw		x27,	9*4(x1)
+		and 	x15, x27, x11
+		add 	x31, x31, x15         //update signature
+	lw		x28,	10*4(x1)
+		and 	x15, x28, x12
+		add 	x31, x31, x15         //update signature
+	lw		x29,	11*4(x1)
+		and 	x15, x29, x13
+		add 	x31, x31, x15         //update signature
+	lw		x30,	12*4(x1)
+		and 	x15, x30, x14
+		add 	x31, x31, x15         //update signature
 
 
 
@@ -1948,6 +2632,9 @@ _sbst_alu:
 
 signature:
 	.space 4
+
+loandst:
+	.space 150
 
 save_regs:
 	.space 0x7C

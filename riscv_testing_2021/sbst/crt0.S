@@ -51,7 +51,7 @@ _start:
 
 /* Invoke MARCH test */
 
-	call _march
+//	call _march
 
 /* initialize global pointer */
 .option push
@@ -101,6 +101,7 @@ _start:
 /* call boot-time software-based self-test */
 	call _sbst_boot
   	call _sbst_alu
+     call _sbst_regs
 
 /* call main */
 	//lw a0, 0(sp)                    /* a0 = argc */
