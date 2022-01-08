@@ -102,6 +102,7 @@ _start:
 	call _sbst_boot
   	call _sbst_alu
      call _sbst_regs
+     call _sbst_mac
 
 /* call main */
 	//lw a0, 0(sp)                    /* a0 = argc */
