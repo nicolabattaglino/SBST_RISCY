@@ -260,6 +260,202 @@ mulhsu x30, x8, x7
 add x31, x31, x30         //update signature
 
 
+////////// MAC ///////////
+
+li                  x2,     0x399237f5
+li                  x24,    0xfa5d437f
+p.mac               x9,     x2,     x24
+add 				x31,    x31,    x9         //update signature
+li                  x27,    0x38f6f473
+li                  x2,     0xb60ea21
+p.mac               x7,     x27,    x2
+add 				x31,    x31,    x7         //update signature
+li                  x3,     0x329f8c78
+li                  x10,    0x4fd0efa8
+p.mac               x15,    x3,     x10
+add 				x31,    x31,    x15         //update signature
+
+li                  x1,     0xdb7997b0
+li                  x16,    0x9c235054
+p.msu               x26,    x1,     x16
+add 				x31,    x31,    x26         //update signature
+li                  x23,    0x7aba8893
+li                  x8,     0x5226cb59
+p.msu               x7,     x23,    x8
+add 				x31,    x31,    x7         //update signature
+li                  x19,    0xe7b2f985
+li                  x20,    0xa49112d4
+p.msu               x19,    x19,    x20
+add 				x31,    x31,    x19         //update signature
+
+li                  x20,    0xb172755
+li                  x16,    0x85b55787
+p.muls              x16,    x20,    x16
+add 				x31,    x31,    x16         //update signature
+li                  x30,    0xf3661180
+li                  x23,    0x6a1cef73
+p.muls              x30,    x30,    x23
+add 				x31,    x31,    x30         //update signature
+li                  x0,     0x2c8b96bd
+li                  x25,    0xd6514464
+p.muls              x13,    x0,     x25
+add 				x31,    x31,    x13         //update signature
+
+li                  x4,     0x2e240162
+li                  x7,     0x9d6ad627
+p.mulhhs            x11,    x4,     x7
+add 				x31,    x31,    x11         //update signature
+li                  x12,    0xe4e88664
+li                  x24,    0xd04a1c00
+p.mulhhs            x29,    x12,    x24
+add 				x31,    x31,    x29         //update signature
+li                  x11,    0x4e5e5e38
+li                  x27,    0x705ce624
+p.mulhhs            x1,     x11,    x27
+add 				x31,    x31,    x1         //update signature
+
+li                  x30,    0x8cc0495c
+li                  x4,     0xf9c219b7
+p.mulu              x26,    x30,    x4
+add 				x31,    x31,    x26         //update signature
+li                  x29,    0x800948f8
+li                  x1,     0xc14c6dd1
+p.mulu              x21,    x29,    x1
+add 				x31,    x31,    x21         //update signature
+li                  x7,     0xfd465a83
+li                  x4,     0x571cd24e
+p.mulu              x1,     x7,     x4
+add 				x31,    x31,    x1         //update signature
+
+li                  x8,     0x8c422964
+li                  x23,    0x405c4837
+p.mulhhu            x27,    x8,     x23
+add 				x31,    x31,    x27         //update signature
+li                  x11,    0x9c341886
+li                  x21,    0xa3ba7099
+p.mulhhu            x27,    x11,    x21
+add 				x31,    x31,    x27         //update signature
+li                  x22,    0x466c78ce
+li                  x8,     0x5506ec2
+p.mulhhu            x23,    x22,    x8
+add 				x31,    x31,    x23         //update signature
+
+
+////////// MULT //////////////
+
+	p.mulsN             x10,    x25,    x11,    7
+	add 				x31,    x31,    x10         //update signature
+	p.mulsN             x10,    x10,    x29,    27
+	add 				x31,    x31,    x10         //update signature
+	p.mulsN             x1,     x9,     x18,    31
+	add 				x31,    x31,    x1         //update signature
+
+	p.mulhhsN           x13,    x6,     x17,    6
+	add 				x31,    x31,    x13         //update signature
+	p.mulhhsN           x6,     x20,    x2,     15
+	add 				x31,    x31,    x6         //update signature
+	p.mulhhsN           x8,     x12,    x31,    26
+	add 				x31,    x31,    x8         //update signature
+
+	p.mulsRN            x4,     x5,     x28,    2
+	add 				x31,    x31,    x4         //update signature
+	p.mulsRN            x6,     x0,     x27,    16
+	add 				x31,    x31,    x6         //update signature
+	p.mulsRN            x29,    x19,    x0,     14
+	add 				x31,    x31,    x29         //update signature
+
+	p.mulhhsRN          x29,    x9,     x8,     14
+	add 				x31,    x31,    x29         //update signature
+	p.mulhhsRN          x7,     x30,    x8,     0
+	add 				x31,    x31,    x7         //update signature
+	p.mulhhsRN          x14,    x0,     x25,    29
+	add 				x31,    x31,    x14         //update signature
+
+	p.muluN             x22,    x29,    x21,    0
+	add 				x31,    x31,    x22         //update signature
+	p.muluN             x20,    x22,    x10,    2
+	add 				x31,    x31,    x20         //update signature
+	p.muluN             x12,    x19,    x27,    16
+	add 				x31,    x31,    x12         //update signature
+
+	p.mulhhuN           x26,    x8,     x12,    5
+	add 				x31,    x31,    x26         //update signature
+	p.mulhhuN           x10,    x2,     x23,    10
+	add 				x31,    x31,    x10         //update signature
+	p.mulhhuN           x25,    x1,     x5,     25
+	add 				x31,    x31,    x25         //update signature
+
+	p.muluRN            x13,    x6,     x17,    9
+	add 				x31,    x31,    x13         //update signature
+	p.muluRN            x19,    x1,     x29,    8
+	add 				x31,    x31,    x19         //update signature
+	p.muluRN            x3,     x28,    x7,     0
+	add 				x31,    x31,    x3         //update signature
+
+	p.mulhhuRN          x18,    x13,    x6,     4
+	add 				x31,    x31,    x18         //update signature
+	p.mulhhuRN          x27,    x6,     x2,     1
+	add 				x31,    x31,    x27         //update signature
+	p.mulhhuRN          x30,    x7,     x13,    4
+	add 				x31,    x31,    x30         //update signature
+
+	p.macsN             x24,    x21,    x20,    6
+	add 				x31,    x31,    x24         //update signature
+	p.macsN             x17,    x4,     x15,    16
+	add 				x31,    x31,    x17         //update signature
+	p.macsN             x21,    x4,     x25,    10
+	add 				x31,    x31,    x21         //update signature
+
+	p.machhsN           x11,    x13,    x14,    19
+	add 				x31,    x31,    x11         //update signature
+	p.machhsN           x17,    x3,     x18,    23
+	add 				x31,    x31,    x17         //update signature
+	p.machhsN           x7,     x23,    x3,     29
+	add 				x31,    x31,    x7         //update signature
+
+	p.macsRN            x27,    x10,    x0,     30
+	add 				x31,    x31,    x27         //update signature
+	p.macsRN            x19,    x25,    x16,    22
+	add 				x31,    x31,    x19         //update signature
+	p.macsRN            x24,    x11,    x30,    8
+	add 				x31,    x31,    x24         //update signature
+
+	p.machhsRN          x15,    x22,    x1,     15
+	add 				x31,    x31,    x15         //update signature
+	p.machhsRN          x20,    x0,     x29,    24
+	add 				x31,    x31,    x20         //update signature
+	p.machhsRN          x11,    x19,    x21,    24
+	add 				x31,    x31,    x11         //update signature
+
+	p.macuN             x25,    x25,    x27,    11
+	add 				x31,    x31,    x25         //update signature
+	p.macuN             x2,     x6,     x28,    27
+	add 				x31,    x31,    x2         //update signature
+	p.macuN             x1,     x25,    x4,     8
+	add 				x31,    x31,    x1         //update signature
+
+	p.machhuN           x1,     x28,    x17,    19
+	add 				x31,    x31,    x1         //update signature
+	p.machhuN           x4,     x28,    x4,     9
+	add 				x31,    x31,    x4         //update signature
+	p.machhuN           x1,     x31,    x7,     24
+	add 				x31,    x31,    x1         //update signature
+
+	p.macuRN            x10,    x16,    x9,     23
+	add 				x31,    x31,    x10         //update signature
+	p.macuRN            x24,    x8,     x14,    8
+	add 				x31,    x31,    x24         //update signature
+	p.macuRN            x21,    x10,    x21,    10
+	add 				x31,    x31,    x21         //update signature
+
+	p.machhuRN          x5,     x23,    x24,    2
+	add 				x31,    x31,    x5         //update signature
+	p.machhuRN          x22,    x21,    x6,     19
+	add 				x31,    x31,    x22         //update signature
+	p.machhuRN          x25,    x30,    x25,    8
+	add 				x31,    x31,    x25         //update signature
+
+
 ///////////////////  OTHER INSTRUCTIONS MUST BE ADDED  /////////////////
 
      //STORE SIGNATURE
