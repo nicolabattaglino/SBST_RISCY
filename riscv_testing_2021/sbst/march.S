@@ -41,14 +41,16 @@ _march:
     sw  x9,4(x7)
     addi x7,x7,4
     bne x7,x2,ciclo3
+    li x10, 0x00000000
     j fine
     errore:
-    li x10,0xe00ee00e
+    li x10,0x00000001
     fine:
 ret
 
 // -------------------------------------
 	.section ".TEST_DATA", "aw"
-	
+	.global march_test_result
 save_regs:
 	.space 0x7C
+
