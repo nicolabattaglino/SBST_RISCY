@@ -111,9 +111,13 @@ _sbst_boot:
 	la x31, signature
 	sw x1,0*4(x31)
 
+	mv a0, x31
+	
 	// write the result (check label 'test_result')
 	la x31,test_result
 	sw x1,0*4(x31)
+
+
 
 	li x1, 0x00000001
 	addi x1,x1,2
