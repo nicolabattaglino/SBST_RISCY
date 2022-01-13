@@ -1,13 +1,3 @@
-/* Copyright (c) 2017  SiFive Inc. All rights reserved.
- * Copyright (c) 2019  ETH Zürich and University of Bologna
- * This copyrighted material is made available to anyone wishing to use,
- * modify, copy, or redistribute it subject to the terms and conditions
- * of the FreeBSD License.   This program is distributed in the hope that
- * it will be useful, but WITHOUT ANY WARRANTY expressed or implied,
- * including the implied warranties of MERCHANTABILITY or FITNESS FOR
- * A PARTICULAR PURPOSE.  A copy of this license is available at
- * http://www.opensource.org/licenses.
- */
 
 /* Entry point for bare metal programs */
 .section .text.start
@@ -51,7 +41,8 @@ _start:
 
 /* Invoke MARCH test */
 
-//	call _march
+	call _march
+	
 
 /* initialize global pointer */
 .option push
@@ -100,7 +91,11 @@ _start:
 
 /* call boot-time software-based self-test */
 //	call _sbst_boot
-//  	call _sbst_alu
+	mv x7, a0
+	la x5, SIGNATURES
+	lw x6, 0(x5)
+	beq x6,a0,correct
+//  call _sbst_alu
 //   call _sbst_alu2
 //   call _sbst_alui
 //   call _sbst_palu
@@ -108,6 +103,17 @@ _start:
 //   call _sbst_pvalu2
 //   call _sbst_regs
 //   call _sbst_mac
+	
+
+	call _sbst_regs
+	call _sbst_regseb
+	call _sbst_regsebu
+	call _sbst_regseh
+	call _sbst_regsehu
+	call _sbst_regsew
+	call _sbst_regsbhw
+	call _sbst_regs
+
 
 /* call main */
 	//lw a0, 0(sp)                    /* a0 = argc */
@@ -131,3 +137,11 @@ _fini:
 	ret
 .size  _init, .-_init
 .size _fini, .-_fini
+
+
+.section ".TEST_RODATA", "a"
+
+SIGNATURES:
+	.long 0x000001F0 // sbst_boot signature
+	.long 0x00000002
+	.long 0x00000003

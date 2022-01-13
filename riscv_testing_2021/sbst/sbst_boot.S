@@ -196,9 +196,6 @@ RF_PATTERNS:
 
 
 
-
-
-
 OTHER_PATTERNS:
 	.long 0x0
 	.long 0x0
