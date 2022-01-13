@@ -99,10 +99,15 @@ _start:
 	call __libc_init_array
 
 /* call boot-time software-based self-test */
-	call _sbst_boot
-  	call _sbst_alu
-     call _sbst_regs
-     call _sbst_mac
+//	call _sbst_boot
+//  	call _sbst_alu
+//   call _sbst_alu2
+//   call _sbst_alui
+//   call _sbst_palu
+//   call _sbst_pvalu
+//   call _sbst_pvalu2
+//   call _sbst_regs
+//   call _sbst_mac
 
 /* call main */
 	//lw a0, 0(sp)                    /* a0 = argc */

@@ -1,8 +1,8 @@
 .section .text
-.global _sbst_alu
-.type _sbst_alu, @function
+.global _sbst_alui
+.type _sbst_alui, @function
 
-_sbst_alu:
+_sbst_alui:
 
 // preserve all non-volatile registers (use section .TEST_DATA)
 //store it in save_regs area
@@ -1271,7 +1271,7 @@ srai x30, x6, 24
 
 // -------------------------------------
 	.section ".TEST_DATA", "aw"
-	.global alu_test_result
+	.global alui_test_result
 
 signature:
 	.space 4
