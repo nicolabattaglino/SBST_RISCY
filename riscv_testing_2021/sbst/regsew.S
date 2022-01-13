@@ -1,8 +1,8 @@
 .section .text
-.global _sbst_regs
-.type _sbst_regs, @function
+.global _sbst_regsew
+.type _sbst_regsew, @function
 
-_sbst_regs:
+_sbst_regsew:
 
 //add sp, sp, 16		// this creates space in the stack
 

@@ -1,6 +1,6 @@
 .section .text
-.global _sbst_regseh
-.type _sbst_regseh, @function
+.global _sbst_regsehu
+.type _sbst_regsehu, @function
 
 _sbst_regseh:
 
