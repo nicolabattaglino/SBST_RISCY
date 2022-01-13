@@ -41,8 +41,8 @@ _start:
 
 /* Invoke MARCH test */
 
-	call _march
-	
+//	call _march
+
 
 /* initialize global pointer */
 .option push
@@ -103,13 +103,14 @@ _start:
 	la x5, SIGNATURES
 	lw x6, 0*4(x5)
 	beq x6,a0,boot_correct
-	halt
+	j stop
 boot_correct:
 
 ///////////////////////////
 //////// alu //////////////
 ///////////////////////////
 
+	la x30, ROUTINES
 	lb x29, 1(x30)
 	beq x29,x0,alu_correct
 
@@ -119,13 +120,14 @@ boot_correct:
 	la x5, SIGNATURES
 	lw x6, 1*4(x5)
 	beq x6,a0,alu_correct
-	halt
+	j stop
 alu_correct:
 
 ////////////////////////////
 //////// alu2 //////////////
 ///////////////////////////
 
+	la x30, ROUTINES
 	lb x29, 2(x30)
 	beq x29,x0,alu2_correct
 
@@ -135,13 +137,14 @@ alu_correct:
 	la x5, SIGNATURES
 	lw x6, 2*4(x5)
 	beq x6,a0,alu2_correct
-	halt
+	j stop
 alu2_correct:
 
 ////////////////////////////
 //////// alui //////////////
 ////////////////////////////
 
+	la x30, ROUTINES
 	lb x29, 3(x30)
 	beq x29,x0,alui_correct
 
@@ -151,13 +154,14 @@ alu2_correct:
 	la x5, SIGNATURES
 	lw x6, 3*4(x5)
 	beq x6,a0,alui_correct
-	halt
+	j stop
 alui_correct:
 
 ////////////////////////////
 //////// palu //////////////
 ////////////////////////////
 
+	la x30, ROUTINES
 	lb x29, 4(x30)
 	beq x29,x0,palu_correct
 
@@ -167,13 +171,14 @@ alui_correct:
 	la x5, SIGNATURES
 	lw x6, 4*4(x5)
 	beq x6,a0,palu_correct
-	halt
+	j stop
 palu_correct:
 
 ////////////////////////////
 //////// pvalu /////////////
 ////////////////////////////
 
+	la x30, ROUTINES
 	lb x29, 5(x30)
 	beq x29,x0,pvalu_correct
 
@@ -183,13 +188,14 @@ palu_correct:
 	la x5, SIGNATURES
 	lw x6, 5*4(x5)
 	beq x6,a0,pvalu_correct
-	halt
+	j stop
 pvalu_correct:
 
 ////////////////////////////
 //////// pvalu2 ////////////
 ////////////////////////////
 
+	la x30, ROUTINES
 	lb x29, 6(x30)
 	beq x29,x0,pvalu2_correct
 
@@ -199,13 +205,14 @@ pvalu_correct:
 	la x5, SIGNATURES
 	lw x6, 6*4(x5)
 	beq x6,a0,pvalu2_correct
-	halt
+	j stop
 pvalu2_correct:
 
 ////////////////////////////
 //////// mac ///////////////
 ////////////////////////////
 
+	la x30, ROUTINES
 	lb x29, 7(x30)
 	beq x29,x0,mac_correct
 
@@ -215,13 +222,14 @@ pvalu2_correct:
 	la x5, SIGNATURES
 	lw x6, 7*4(x5)
 	beq x6,a0,mac_correct
-	halt
+	j stop
 mac_correct:
 
 ////////////////////////////
 //////// regs //////////////
 ////////////////////////////
 
+	la x30, ROUTINES
 	lb x29, 8(x30)
 	beq x29,x0,regs_correct
 
@@ -231,13 +239,14 @@ mac_correct:
 	la x5, SIGNATURES
 	lw x6, 8*4(x5)
 	beq x6,a0,regs_correct
-	halt
+	j stop
 regs_correct:
 
 ////////////////////////////
 //////// regseb ////////////
 ////////////////////////////
 
+	la x30, ROUTINES
 	lb x29, 9(x30)
 	beq x29,x0,regseb_correct
 
@@ -247,7 +256,7 @@ regs_correct:
 	la x5, SIGNATURES
 	lw x6, 9*4(x5)
 	beq x6,a0,regseb_correct
-	halt
+	j stop
 regseb_correct:
 
 
@@ -255,6 +264,7 @@ regseb_correct:
 //////// regsebu ///////////
 ////////////////////////////
 
+	la x30, ROUTINES
 	lb x29, 10(x30)
 	beq x29,x0,regsebu_correct
 
@@ -264,7 +274,7 @@ regseb_correct:
 	la x5, SIGNATURES
 	lw x6, 10*4(x5)
 	beq x6,a0,regsebu_correct
-	halt
+	j stop
 regsebu_correct:
 
 
@@ -272,6 +282,7 @@ regsebu_correct:
 //////// regseh  ///////////
 ////////////////////////////
 
+	la x30, ROUTINES
 	lb x29, 11(x30)
 	beq x29,x0,regseh_correct
 
@@ -281,7 +292,7 @@ regsebu_correct:
 	la x5, SIGNATURES
 	lw x6, 11*4(x5)
 	beq x6,a0,regseh_correct
-	halt
+	j stop
 regseh_correct:
 
 
@@ -289,6 +300,7 @@ regseh_correct:
 //////// regsehu ///////////
 ////////////////////////////
 
+	la x30, ROUTINES
 	lb x29, 12(x30)
 	beq x29,x0,regsehu_correct
 
@@ -298,13 +310,14 @@ regseh_correct:
 	la x5, SIGNATURES
 	lw x6, 12*4(x5)
 	beq x6,a0,regsehu_correct
-	halt
+	j stop
 regsehu_correct:
 
 ////////////////////////////
 //////// regsew ////////////
 ////////////////////////////
 
+	la x30, ROUTINES
 	lb x29, 13(x30)
 	beq x29,x0,regsew_correct
 
@@ -314,24 +327,27 @@ regsehu_correct:
 	la x5, SIGNATURES
 	lw x6, 13*4(x5)
 	beq x6,a0,regsew_correct
-	halt
+	j stop
 regsew_correct:
 
 ////////////////////////////
-//////// regsebhw //////////
+//////// regsbhw //////////
 ////////////////////////////
 
+	la x30, ROUTINES
 	lb x29, 14(x30)
-	beq x29,x0,regsebhw_correct
+	beq x29,x0,regsbhw_correct
 
-    call _sbst_regsebhw
+    call _sbst_regsbhw
 
 	mv x7, a0
 	la x5, SIGNATURES
 	lw x6, 14*4(x5)
-	beq x6,a0,regsebhw_correct
-	halt
-regsebhw_correct:
+	beq x6,a0,regsbhw_correct
+
+stop:	j stop
+
+regsbhw_correct:
 
 
 
@@ -364,13 +380,13 @@ _fini:
 ROUTINES:
 
 	.byte 0x00 // sbst_boot
-	.byte 0x00 // alu
+	.byte 0x01 // alu
 	.byte 0x00 // alu2
-	.byte 0x00 // alui
-	.byte 0x00 // palu
-	.byte 0x00 // pvalu
-	.byte 0x00 // pvalu2
-	.byte 0x00 // mac
+	.byte 0x01 // alui
+	.byte 0x01 // palu
+	.byte 0x01 // pvalu
+	.byte 0x01 // pvalu2
+	.byte 0x01 // mac
 	.byte 0x00 // regs
 	.byte 0x00 // regseb
 	.byte 0x00 // regsebu
@@ -382,13 +398,13 @@ ROUTINES:
 
 SIGNATURES:
 	.long 0x000001F0 // sbst_boot signature
-	.long 0x00000000 // alu signature
-	.long 0x00000000 // alu2 signature
-	.long 0x00000000 // alui signature
-	.long 0x00000000 // palu signature
-	.long 0x00000000 // pvalu signature
-	.long 0x00000000 // pvalu2 signature
-	.long 0x00000000 // mac signature
+	.long 0x2819099F // alu signature
+	.long 0xE4E2230E // alu2 signature
+	.long 0x6F017d19 // alui signature
+	.long 0xE6B6F409 // palu signature
+	.long 0x9D599FFA // pvalu signature
+	.long 0x76EDE524 // pvalu2 signature
+	.long 0xB28B3DFB // mac signature
 	.long 0x00000000 // regs signature
 	.long 0x00000000 // regseb signature
 	.long 0x00000000 // regsebu signature

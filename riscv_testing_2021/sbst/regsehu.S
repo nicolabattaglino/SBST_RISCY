@@ -2,7 +2,7 @@
 .global _sbst_regsehu
 .type _sbst_regsehu, @function
 
-_sbst_regseh:
+_sbst_regsehu:
 
 //add sp, sp, 16		// this creates space in the stack
 

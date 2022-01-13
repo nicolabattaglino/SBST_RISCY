@@ -486,6 +486,8 @@ jump5:
      la x30, signature
      sw x31, 0(x30)
 
+     add a0, x31, x0	//return value 
+
 	// restore non-volatile registers
 	la		x5, save_regs
 	lw		x1,	0*4(x5)
@@ -509,7 +511,7 @@ jump5:
 
 // -------------------------------------
 	.section ".TEST_DATA", "aw"
-	.global alu_test_result
+	.global alu2_test_result
 
 signature:
 	.space 4

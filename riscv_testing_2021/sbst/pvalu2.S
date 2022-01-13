@@ -1491,6 +1491,8 @@ add x31, x0, x0          //initialize signature
      la x30, signature
      sw x31, 0(x30)
 
+     add a0, x31, x0	//return value 
+
      // restore non-volatile registers
      la		x5, save_regs
      lw		x1,	0*4(x5)
