@@ -107,12 +107,16 @@ _sbst_boot:
 	// store the value of the first and the second part of the addition in x1 register
 	add		x1,x1,x31
 
+// return signature in x10
+
+	mv a0, x31
+
 	//store value in signature
 	la x31, signature
 	sw x1,0*4(x31)
 
-	mv a0, x31
 	
+
 	// write the result (check label 'test_result')
 	la x31,test_result
 	sw x1,0*4(x31)
