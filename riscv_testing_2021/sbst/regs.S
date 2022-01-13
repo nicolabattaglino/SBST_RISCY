@@ -29,8 +29,360 @@ sw		x25,	13*4(x5)
 sw		x26,	14*4(x5)
 sw		x27,	15*4(x5)
 
+
+la x31, RF_XOR
+lw x1, 0*4(x31)
+lw x2, 1*4(x31)
+lw x3, 1*4(x31)
+lw x4, 0*4(x31)
+
+lw x5, 2*4(x31)
+lw x6, 3*4(x31)
+lw x7, 3*4(x31)
+lw x8, 2*4(x31)
+
+lw x9, 4*4(x31)
+lw x10, 5*4(x31)
+lw x11, 5*4(x31)
+lw x12, 4*4(x31)
+
+lw x13, 6*4(x31)
+lw x14, 7*4(x31)
+lw x15, 7*4(x31)
+lw x16, 6*4(x31)
+
+lw x17, 0*4(x31)
+lw x18, 1*4(x31)
+lw x19, 1*4(x31)
+lw x20, 0*4(x31)
+
+lw x21, 2*4(x31)
+lw x22, 3*4(x31)
+lw x23, 3*4(x31)
+lw x24, 2*4(x31)
+
+lw x25, 4*4(x31)
+lw x26, 5*4(x31)
+lw x27, 5*4(x31)
+lw x28, 4*4(x31)
+
+lw x29, 6*4(x31)
+lw x30, 7*4(x31)
+
 //initialize signature
 add       x31, x0, x0
+
+xor x15, x1, x2
+add       x31, x31, x15
+xor x16, x3, x4
+add       x31, x31, x16
+xor x17, x5, x6
+add       x31, x31, x17
+xor x18, x7, x8
+add       x31, x31, x18
+xor x19, x9, x10
+add       x31, x31, x19
+xor x20, x11, x12
+add       x31, x31, x20
+xor x21, x13, x14
+add       x31, x31, x21
+
+xor x15, x2, x1
+add       x31, x31, x15
+xor x16, x4, x3
+add       x31, x31, x16
+xor x17, x6, x5
+add       x31, x31, x17
+xor x18, x8, x7
+add       x31, x31, x18
+xor x19, x10, x9
+add       x31, x31, x19
+xor x20, x12, x11
+add       x31, x31, x20
+xor x21, x14, x13
+add       x31, x31, x21
+
+la x14, RF_XOR
+lw x15, 7*4(x14)
+lw x16, 6*4(x14)
+
+lw x17, 0*4(x14)
+lw x18, 1*4(x14)
+lw x19, 1*4(x14)
+lw x20, 0*4(x14)
+
+lw x21, 2*4(x14)
+lw x22, 3*4(x14)
+lw x23, 3*4(x14)
+lw x24, 2*4(x14)
+
+lw x25, 4*4(x14)
+lw x26, 5*4(x14)
+lw x27, 5*4(x14)
+lw x28, 4*4(x14)
+
+xor x1, x15, x16
+add       x31, x31, x1
+xor x2, x17, x18
+add       x31, x31, x2
+xor x4, x19, x20
+add       x31, x31, x4
+xor x5, x21, x22
+add       x31, x31, x5
+xor x6, x23, x24
+add       x31, x31, x6
+xor x7, x25, x26
+add       x31, x31, x7
+xor x8, x27, x28
+add       x31, x31, x8
+xor x9, x29, x30
+add       x31, x31, x9
+
+xor x1, x16, x15
+add       x31, x31, x1
+xor x2, x18, x17
+add       x31, x31, x2
+xor x4, x20, x19
+add       x31, x31, x4
+xor x5, x22, x21
+add       x31, x31, x5
+xor x6, x24, x23
+add       x31, x31, x6
+xor x7, x26, x25
+add       x31, x31, x7
+xor x8, x28, x27
+add       x31, x31, x8
+xor x9, x30, x29
+add       x31, x31, x9
+
+xor x9, x1, x15
+add       x31, x31, x9
+xor x10, x2, x16
+add       x31, x31, x10
+xor x11, x3, x17
+add       x31, x31, x11
+xor x12, x4, x18
+add       x31, x31, x12
+xor x13, x5, x19
+add       x31, x31, x13
+xor x14, x6, x20
+add       x31, x31, x14
+xor x23, x7, x21
+add       x31, x31, x23
+xor x24, x8, x22
+add       x31, x31, x24
+
+xor x17, x9, x23
+add       x31, x31, x17
+xor x18, x10, x24
+add       x31, x31, x18
+xor x19, x11, x25
+add       x31, x31, x19
+xor x20, x12, x26
+add       x31, x31, x20
+xor x21, x13, x27
+add       x31, x31, x21
+xor x22, x14, x28
+add       x31, x31, x22
+xor x17, x15, x29
+add       x31, x31, x17
+xor x18, x16, x30
+add       x31, x31, x18
+
+xor x9, x1, x15
+add       x31, x31, x9
+xor x10, x2, x16
+add       x31, x31, x10
+xor x11, x3, x17
+add       x31, x31, x11
+xor x12, x4, x18
+add       x31, x31, x12
+xor x13, x5, x19
+add       x31, x31, x13
+xor x14, x6, x20
+add       x31, x31, x14
+xor x23, x7, x21
+add       x31, x31, x23
+xor x24, x8, x22
+add       x31, x31, x24
+
+xor x17, x9, x23
+add       x31, x31, x17
+xor x18, x10, x24
+add       x31, x31, x18
+xor x19, x11, x25
+add       x31, x31, x19
+xor x20, x12, x26
+add       x31, x31, x20
+xor x21, x13, x27
+add       x31, x31, x21
+xor x22, x14, x28
+add       x31, x31, x22
+xor x17, x15, x29
+add       x31, x31, x17
+xor x18, x16, x30
+add       x31, x31, x18
+
+///////////////// second
+
+la x30, RF_XOR
+lw x1, 1*4(x30)
+lw x2, 0*4(x30)
+lw x3, 0*4(x30)
+lw x4, 1*4(x30)
+
+lw x5, 3*4(x30)
+lw x6, 2*4(x30)
+lw x7, 2*4(x30)
+lw x8, 3*4(x30)
+
+lw x9, 5*4(x30)
+lw x10, 4*4(x30)
+lw x11, 4*4(x30)
+lw x12, 5*4(x30)
+
+lw x13, 7*4(x30)
+lw x14, 6*4(x30)
+lw x15, 6*4(x30)
+lw x16, 7*4(x30)
+
+lw x17, 1*4(x30)
+lw x18, 0*4(x30)
+lw x19, 0*4(x30)
+lw x20, 1*4(x30)
+
+lw x21, 3*4(x30)
+lw x22, 2*4(x30)
+lw x23, 2*4(x30)
+lw x24, 3*4(x30)
+
+lw x25, 5*4(x30)
+lw x26, 4*4(x30)
+lw x27, 4*4(x30)
+lw x28, 5*4(x30)
+
+lw x29, 7*4(x30)
+mv x30, x15
+
+xor x15, x1, x2
+add       x31, x31, x15
+xor x16, x3, x4
+add       x31, x31, x16
+xor x17, x5, x6
+add       x31, x31, x17
+xor x18, x7, x8
+add       x31, x31, x18
+xor x19, x9, x10
+add       x31, x31, x19
+xor x20, x11, x12
+add       x31, x31, x20
+xor x21, x13, x14
+add       x31, x31, x21
+
+xor x15, x2, x1
+add       x31, x31, x15
+xor x16, x4, x3
+add       x31, x31, x16
+xor x17, x6, x5
+add       x31, x31, x17
+xor x18, x8, x7
+add       x31, x31, x18
+xor x19, x10, x9
+add       x31, x31, x19
+xor x20, x12, x11
+add       x31, x31, x20
+xor x21, x14, x13
+add       x31, x31, x21
+
+la x30, RF_XOR
+lw x15, 6*4(x30)
+lw x16, 7*4(x30)
+
+lw x17, 1*4(x30)
+lw x18, 0*4(x30)
+lw x19, 0*4(x30)
+lw x20, 1*4(x30)
+
+lw x21, 3*4(x30)
+lw x22, 2*4(x30)
+lw x23, 2*4(x30)
+lw x24, 3*4(x30)
+
+lw x25, 5*4(x30)
+lw x26, 4*4(x30)
+lw x27, 4*4(x30)
+lw x28, 5*4(x30)
+
+lw x29, 7*4(x30)
+mv x30, x15
+
+xor x1, x15, x16
+add       x31, x31, x1
+xor x2, x17, x18
+add       x31, x31, x2
+xor x4, x19, x20
+add       x31, x31, x4
+xor x5, x21, x22
+add       x31, x31, x5
+xor x6, x23, x24
+add       x31, x31, x6
+xor x7, x25, x26
+add       x31, x31, x7
+xor x8, x27, x28
+add       x31, x31, x8
+xor x9, x29, x30
+add       x31, x31, x9
+
+xor x1, x16, x15
+add       x31, x31, x1
+xor x2, x18, x17
+add       x31, x31, x2
+xor x4, x20, x19
+add       x31, x31, x4
+xor x5, x22, x21
+add       x31, x31, x5
+xor x6, x24, x23
+add       x31, x31, x6
+xor x7, x26, x25
+add       x31, x31, x7
+xor x8, x28, x27
+add       x31, x31, x8
+xor x9, x30, x29
+add       x31, x31, x9
+
+xor x9, x1, x15
+add       x31, x31, x9
+xor x10, x2, x16
+add       x31, x31, x10
+xor x11, x3, x17
+add       x31, x31, x11
+xor x12, x4, x18
+add       x31, x31, x12
+xor x13, x5, x19
+add       x31, x31, x13
+xor x14, x6, x20
+add       x31, x31, x14
+xor x23, x7, x21
+add       x31, x31, x23
+xor x24, x8, x22
+add       x31, x31, x24
+
+xor x17, x9, x23
+add       x31, x31, x17
+xor x18, x10, x24
+add       x31, x31, x18
+xor x19, x11, x25
+add       x31, x31, x19
+xor x20, x12, x26
+add       x31, x31, x20
+xor x21, x13, x27
+add       x31, x31, x21
+xor x22, x14, x28
+add       x31, x31, x22
+xor x17, x15, x29
+add       x31, x31, x17
+xor x18, x16, x30
+add       x31, x31, x18
 
 //register tests word
 
@@ -617,6 +969,8 @@ add       x1, x1, x31
 // restore signature
 add       x31, x1, x0
 
+
+
 /////////////////////////////////
 /////////// extensions //////////
 /////////////////////////////////
@@ -630,147 +984,147 @@ add       x31, x1, x0
 //addi                x2,     x0,     0
 
 // test imm-reg with post-increment
-la        x30, RF_PATTERNS
+la        x30, RF_P1
 p.lb      x1, 1(x30!)
 add       x31, x31, x1
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P2
 p.lb      x2, 1(x30!)
 add       x31, x31, x2
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P3
 p.lb      x3, 1(x30!)
 add       x31, x31, x3
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P4
 p.lb      x4, 1(x30!)
 add       x31, x31, x4
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P5
 p.lb      x5, 1(x30!)
 add       x31, x31, x5
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P6
 p.lb      x6, 1(x30!)
 add       x31, x31, x6
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P1
 p.lb      x7, 1(x30!)
 add       x31, x31, x7
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P2
 p.lb      x8, 1(x30!)
 add       x31, x13, x8
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P3
 p.lb      x9, 1(x30!)
 add       x31, x31, x9
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P4
 p.lb      x10, 1(x30!)
 add       x31, x31, x10
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P5
 p.lb      x11, 1(x30!)
 add       x31, x31, x11
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P6
 p.lb      x12, 1(x30!)
 add       x31, x31, x12
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P1
 p.lb      x13, 1(x30!)
 add       x31, x31, x13
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P2
 p.lb      x14, 1(x30!)
 add       x31, x31, x14
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P3
 p.lb      x15, 1(x30!)
 add       x31, x31, x15
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P4
 p.lb      x16, 1(x30!)
 add       x31, x31, x16
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P5
 p.lb      x17, 1(x30!)
 add       x31, x31, x17
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P6
 p.lb      x18, 1(x30!)
 add       x31, x31, x18
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P1
 p.lb      x20, 1(x30!)
 add       x31, x31, x20
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P2
 p.lb      x21, 1(x30!)
 add       x31, x31, x21
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P3
 p.lb      x22, 1(x30!)
 add       x31, x31, x22
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P4
 p.lb      x23, 1(x30!)
 add       x31, x31, x23
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P5
 p.lb      x24, 1(x30!)
 add       x31, x31, x24
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P6
 p.lb      x25, 1(x30!)
 add       x31, x31, x25
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P1
 p.lb      x26, 1(x30!)
 add       x31, x31, x26
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P2
 p.lb      x27, 1(x30!)
 add       x31, x31, x27
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P3
 p.lb      x28, 1(x30!)
 add       x31, x31, x28
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P4
 p.lb      x29, 1(x30!)
 add       x31, x31, x29
 add       x31, x31, x30
 
-la        x2, RF_PATTERNS
+la        x2, RF_P5
 p.lb      x30, 1(x2!)
 add       x31, x31, x30
 add       x31, x31, x2
@@ -778,7 +1132,7 @@ add       x31, x31, x2
 //move signature
 add       x1, x31, x0
 
-la        x30, RF_PATTERNS
+la        x30, RF_P1
 p.lb      x31, 1(x30!)
 add       x1, x1, x31
 add       x1, x1, x30
@@ -791,149 +1145,149 @@ add       x31, x1, x0
 //addi                x1,     x0,     1
 addi                x2,     x0,     1
 
-la        x30, RF_PATTERNS
+la        x30, RF_P2
 p.lb      x1, x2(x30!)
 add       x31, x31, x1
 add       x31, x31, x30
 
 addi                x1,     x0,     1
 
-la        x30, RF_PATTERNS
+la        x30, RF_P3
 p.lb      x2, x1(x30!)
 add       x31, x31, x2
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P4
 p.lb      x3, x1(x30!)
 add       x31, x31, x3
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P5
 p.lb      x4, x1(x30!)
 add       x31, x31, x4
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P6
 p.lb      x5, x1(x30!)
 add       x31, x31, x5
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P1
 p.lb      x6, x1(x30!)
 add       x31, x31, x6
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P2
 p.lb      x7, x1(x30!)
 add       x31, x31, x7
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P3
 p.lb      x8, x1(x30!)
 add       x31, x13, x8
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P4
 p.lb      x9, x1(x30!)
 add       x31, x31, x9
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P5
 p.lb      x10, x1(x30!)
 add       x31, x31, x10
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P6
 p.lb      x11, x1(x30!)
 add       x31, x31, x11
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P1
 p.lb      x12, x1(x30!)
 add       x31, x31, x12
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P2
 p.lb      x13, x1(x30!)
 add       x31, x31, x13
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P3
 p.lb      x14, x1(x30!)
 add       x31, x31, x14
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P4
 p.lb      x15, x1(x30!)
 add       x31, x31, x15
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P5
 p.lb      x16, x1(x30!)
 add       x31, x31, x16
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P6
 p.lb      x17, x1(x30!)
 add       x31, x31, x17
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P1
 p.lb      x18, x1(x30!)
 add       x31, x31, x18
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P2
 p.lb      x20, x1(x30!)
 add       x31, x31, x20
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P3
 p.lb      x21, x1(x30!)
 add       x31, x31, x21
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P4
 p.lb      x22, x1(x30!)
 add       x31, x31, x22
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P5
 p.lb      x23, x1(x30!)
 add       x31, x31, x23
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P6
 p.lb      x24, x1(x30!)
 add       x31, x31, x24
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P1
 p.lb      x25, x1(x30!)
 add       x31, x31, x25
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P2
 p.lb      x26, x1(x30!)
 add       x31, x31, x26
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P3
 p.lb      x27, x1(x30!)
 add       x31, x31, x27
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P4
 p.lb      x28, x1(x30!)
 add       x31, x31, x28
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P5
 p.lb      x29, x1(x30!)
 add       x31, x31, x29
 add       x31, x31, x30
 
-la        x2, RF_PATTERNS
+la        x2, RF_P6
 p.lb      x30, x1(x2!)
 add       x31, x31, x30
 add       x31, x31, x2
@@ -943,7 +1297,7 @@ addi                x2,     x0,     1
 //move signature
 add       x1, x31, x0
 
-la        x30, RF_PATTERNS
+la        x30, RF_P2
 p.lb      x31, x2(x30!)
 add       x1, x1, x31
 add       x1, x1, x30
@@ -955,149 +1309,149 @@ add       x31, x1, x0
 addi                x1,     x0,     1
 addi                x2,     x0,     1
 
-la        x30, RF_PATTERNS
+la        x30, RF_P3
 p.lb      x1, x2(x30)
 add       x31, x31, x1
 add       x31, x31, x30
 
-addi                x1,     x0,     1
+addi                x1,     x0,     0
 
-la        x30, RF_PATTERNS
+la        x30, RF_P4
 p.lb      x2, x1(x30)
 add       x31, x31, x2
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P5
 p.lb      x3, x1(x30)
 add       x31, x31, x3
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P6
 p.lb      x4, x1(x30)
 add       x31, x31, x4
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P1
 p.lb      x5, x1(x30)
 add       x31, x31, x5
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P2
 p.lb      x6, x1(x30)
 add       x31, x31, x6
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P3
 p.lb      x7, x1(x30)
 add       x31, x31, x7
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P4
 p.lb      x8, x1(x30)
 add       x31, x13, x8
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P4
 p.lb      x9, x1(x30)
 add       x31, x31, x9
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P5
 p.lb      x10, x1(x30)
 add       x31, x31, x10
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P6
 p.lb      x11, x1(x30)
 add       x31, x31, x11
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P1
 p.lb      x12, x1(x30)
 add       x31, x31, x12
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P2
 p.lb      x13, x1(x30)
 add       x31, x31, x13
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P3
 p.lb      x14, x1(x30)
 add       x31, x31, x14
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P4
 p.lb      x15, x1(x30)
 add       x31, x31, x15
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P5
 p.lb      x16, x1(x30)
 add       x31, x31, x16
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P6
 p.lb      x17, x1(x30)
 add       x31, x31, x17
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P1
 p.lb      x18, x1(x30)
 add       x31, x31, x18
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P2
 p.lb      x20, x1(x30)
 add       x31, x31, x20
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P3
 p.lb      x21, x1(x30)
 add       x31, x31, x21
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P4
 p.lb      x22, x1(x30)
 add       x31, x31, x22
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P5
 p.lb      x23, x1(x30)
 add       x31, x31, x23
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P6
 p.lb      x24, x1(x30)
 add       x31, x31, x24
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P1
 p.lb      x25, x1(x30)
 add       x31, x31, x25
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P2
 p.lb      x26, x1(x30)
 add       x31, x31, x26
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P3
 p.lb      x27, x1(x30)
 add       x31, x31, x27
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P4
 p.lb      x28, x1(x30)
 add       x31, x31, x28
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P5
 p.lb      x29, x1(x30)
 add       x31, x31, x29
 add       x31, x31, x30
 
-la        x2, RF_PATTERNS
+la        x2, RF_P6
 p.lb      x30, x1(x2)
 add       x31, x31, x30
 add       x31, x31, x2
@@ -1107,7 +1461,7 @@ addi                x2,     x0,     1
 //move signature
 add       x1, x31, x0
 
-la        x30, RF_PATTERNS
+la        x30, RF_P1
 p.lb      x31, x2(x30)
 add       x1, x1, x31
 add       x1, x1, x30
@@ -1123,147 +1477,147 @@ add       x31, x1, x0
 //addi                x2,     x0,     0
 
 // test imm-reg with post-increment
-la        x30, RF_PATTERNS
+la        x30, RF_P2
 p.lbu      x1, 1(x30!)
 add       x31, x31, x1
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P3
 p.lbu      x2, 1(x30!)
 add       x31, x31, x2
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P4
 p.lbu      x3, 1(x30!)
 add       x31, x31, x3
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P5
 p.lbu      x4, 1(x30!)
 add       x31, x31, x4
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P6
 p.lbu      x5, 1(x30!)
 add       x31, x31, x5
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P1
 p.lbu      x6, 1(x30!)
 add       x31, x31, x6
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P2
 p.lbu      x7, 1(x30!)
 add       x31, x31, x7
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P2
 p.lbu      x8, 1(x30!)
 add       x31, x13, x8
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P3
 p.lbu      x9, 1(x30!)
 add       x31, x31, x9
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P4
 p.lbu      x10, 1(x30!)
 add       x31, x31, x10
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P5
 p.lbu      x11, 1(x30!)
 add       x31, x31, x11
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P6
 p.lbu      x12, 1(x30!)
 add       x31, x31, x12
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P1
 p.lbu      x13, 1(x30!)
 add       x31, x31, x13
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P2
 p.lbu      x14, 1(x30!)
 add       x31, x31, x14
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P3
 p.lbu      x15, 1(x30!)
 add       x31, x31, x15
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P4
 p.lbu      x16, 1(x30!)
 add       x31, x31, x16
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P5
 p.lbu      x17, 1(x30!)
 add       x31, x31, x17
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P6
 p.lbu      x18, 1(x30!)
 add       x31, x31, x18
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P1
 p.lbu      x20, 1(x30!)
 add       x31, x31, x20
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P2
 p.lbu      x21, 1(x30!)
 add       x31, x31, x21
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P3
 p.lbu      x22, 1(x30!)
 add       x31, x31, x22
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P4
 p.lbu      x23, 1(x30!)
 add       x31, x31, x23
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P5
 p.lbu      x24, 1(x30!)
 add       x31, x31, x24
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P6
 p.lbu      x25, 1(x30!)
 add       x31, x31, x25
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P1
 p.lbu      x26, 1(x30!)
 add       x31, x31, x26
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P2
 p.lbu      x27, 1(x30!)
 add       x31, x31, x27
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P3
 p.lbu      x28, 1(x30!)
 add       x31, x31, x28
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P4
 p.lbu      x29, 1(x30!)
 add       x31, x31, x29
 add       x31, x31, x30
 
-la        x2, RF_PATTERNS
+la        x2, RF_P5
 p.lbu      x30, 1(x2!)
 add       x31, x31, x30
 add       x31, x31, x2
@@ -1271,7 +1625,7 @@ add       x31, x31, x2
 //move signature
 add       x1, x31, x0
 
-la        x30, RF_PATTERNS
+la        x30, RF_P6
 p.lbu      x31, 1(x30!)
 add       x1, x1, x31
 add       x1, x1, x30
@@ -1284,149 +1638,149 @@ add       x31, x1, x0
 addi                x1,     x0,     1
 addi                x2,     x0,     1
 
-la        x30, RF_PATTERNS
+la        x30, RF_P3
 p.lbu      x1, x2(x30!)
 add       x31, x31, x1
 add       x31, x31, x30
 
 addi                x1,     x0,     1
 
-la        x30, RF_PATTERNS
+la        x30, RF_P4
 p.lbu      x2, x1(x30!)
 add       x31, x31, x2
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P5
 p.lbu      x3, x1(x30!)
 add       x31, x31, x3
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P6
 p.lbu      x4, x1(x30!)
 add       x31, x31, x4
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P1
 p.lbu      x5, x1(x30!)
 add       x31, x31, x5
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P2
 p.lbu      x6, x1(x30!)
 add       x31, x31, x6
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P3
 p.lbu      x7, x1(x30!)
 add       x31, x31, x7
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P4
 p.lbu      x8, x1(x30!)
 add       x31, x13, x8
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P5
 p.lbu      x9, x1(x30!)
 add       x31, x31, x9
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P6
 p.lbu      x10, x1(x30!)
 add       x31, x31, x10
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P1
 p.lbu      x11, x1(x30!)
 add       x31, x31, x11
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P2
 p.lbu      x12, x1(x30!)
 add       x31, x31, x12
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P3
 p.lbu      x13, x1(x30!)
 add       x31, x31, x13
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P4
 p.lbu      x14, x1(x30!)
 add       x31, x31, x14
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P5
 p.lbu      x15, x1(x30!)
 add       x31, x31, x15
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P6
 p.lbu      x16, x1(x30!)
 add       x31, x31, x16
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P1
 p.lbu      x17, x1(x30!)
 add       x31, x31, x17
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P2
 p.lbu      x18, x1(x30!)
 add       x31, x31, x18
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P3
 p.lbu      x20, x1(x30!)
 add       x31, x31, x20
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P4
 p.lbu      x21, x1(x30!)
 add       x31, x31, x21
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P5
 p.lbu      x22, x1(x30!)
 add       x31, x31, x22
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P6
 p.lbu      x23, x1(x30!)
 add       x31, x31, x23
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P1
 p.lbu      x24, x1(x30!)
 add       x31, x31, x24
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P2
 p.lbu      x25, x1(x30!)
 add       x31, x31, x25
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P3
 p.lbu      x26, x1(x30!)
 add       x31, x31, x26
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P4
 p.lbu      x27, x1(x30!)
 add       x31, x31, x27
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P5
 p.lbu      x28, x1(x30!)
 add       x31, x31, x28
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P6
 p.lbu      x29, x1(x30!)
 add       x31, x31, x29
 add       x31, x31, x30
 
-la        x2, RF_PATTERNS
+la        x2, RF_P1
 p.lbu      x30, x1(x2!)
 add       x31, x31, x30
 add       x31, x31, x2
@@ -1436,7 +1790,7 @@ addi                x2,     x0,     1
 //move signature
 add       x1, x31, x0
 
-la        x30, RF_PATTERNS
+la        x30, RF_P2
 p.lbu      x31, x2(x30!)
 add       x1, x1, x31
 add       x1, x1, x30
@@ -1445,152 +1799,152 @@ add       x1, x1, x30
 add       x31, x1, x0
 
 // test reg-reg without post-increment
-addi                x1,     x0,     1
-addi                x2,     x0,     1
+addi                x1,     x0,     0
+addi                x2,     x0,     0
 
-la        x30, RF_PATTERNS
+la        x30, RF_P4
 p.lbu      x1, x2(x30)
 add       x31, x31, x1
 add       x31, x31, x30
 
-addi                x1,     x0,     1
+addi                x1,     x0,     0
 
-la        x30, RF_PATTERNS
+la        x30, RF_P5
 p.lbu      x2, x1(x30)
 add       x31, x31, x2
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P6
 p.lbu      x3, x1(x30)
 add       x31, x31, x3
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P1
 p.lbu      x4, x1(x30)
 add       x31, x31, x4
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P2
 p.lbu      x5, x1(x30)
 add       x31, x31, x5
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P3
 p.lbu      x6, x1(x30)
 add       x31, x31, x6
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P4
 p.lbu      x7, x1(x30)
 add       x31, x31, x7
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P5
 p.lbu      x8, x1(x30)
 add       x31, x13, x8
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P6
 p.lbu      x9, x1(x30)
 add       x31, x31, x9
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P1
 p.lbu      x10, x1(x30)
 add       x31, x31, x10
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P2
 p.lbu      x11, x1(x30)
 add       x31, x31, x11
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P3
 p.lbu      x12, x1(x30)
 add       x31, x31, x12
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P4
 p.lbu      x13, x1(x30)
 add       x31, x31, x13
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P5
 p.lbu      x14, x1(x30)
 add       x31, x31, x14
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P6
 p.lbu      x15, x1(x30)
 add       x31, x31, x15
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P1
 p.lbu      x16, x1(x30)
 add       x31, x31, x16
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P2
 p.lbu      x17, x1(x30)
 add       x31, x31, x17
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P3
 p.lbu      x18, x1(x30)
 add       x31, x31, x18
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P4
 p.lbu      x20, x1(x30)
 add       x31, x31, x20
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P5
 p.lbu      x21, x1(x30)
 add       x31, x31, x21
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P6
 p.lbu      x22, x1(x30)
 add       x31, x31, x22
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P1
 p.lbu      x23, x1(x30)
 add       x31, x31, x23
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P2
 p.lbu      x24, x1(x30)
 add       x31, x31, x24
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P3
 p.lbu      x25, x1(x30)
 add       x31, x31, x25
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P4
 p.lbu      x26, x1(x30)
 add       x31, x31, x26
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P5
 p.lbu      x27, x1(x30)
 add       x31, x31, x27
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P6
 p.lbu      x28, x1(x30)
 add       x31, x31, x28
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P1
 p.lbu      x29, x1(x30)
 add       x31, x31, x29
 add       x31, x31, x30
 
-la        x2, RF_PATTERNS
+la        x2, RF_P2
 p.lbu      x30, x1(x2)
 add       x31, x31, x30
 add       x31, x31, x2
@@ -1600,7 +1954,7 @@ addi                x2,     x0,     1
 //move signature
 add       x1, x31, x0
 
-la        x30, RF_PATTERNS
+la        x30, RF_P5
 p.lbu      x31, x2(x30)
 add       x1, x1, x31
 add       x1, x1, x30
@@ -1619,147 +1973,147 @@ addi                x1,     x0,     1
 addi                x2,     x0,     0
 
 // test imm-reg with post-increment
-la        x30, RF_PATTERNS
+la        x30, RF_P6
 p.lh      x1, 1(x30!)
 add       x31, x31, x1
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P1
 p.lh      x2, 1(x30!)
 add       x31, x31, x2
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P2
 p.lh      x3, 1(x30!)
 add       x31, x31, x3
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P3
 p.lh      x4, 1(x30!)
 add       x31, x31, x4
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P4
 p.lh      x5, 1(x30!)
 add       x31, x31, x5
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P5
 p.lh      x6, 1(x30!)
 add       x31, x31, x6
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P6
 p.lh      x7, 1(x30!)
 add       x31, x31, x7
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P1
 p.lh      x8, 1(x30!)
 add       x31, x13, x8
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P1
 p.lh      x9, 1(x30!)
 add       x31, x31, x9
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P2
 p.lh      x10, 1(x30!)
 add       x31, x31, x10
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P3
 p.lh      x11, 1(x30!)
 add       x31, x31, x11
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P4
 p.lh      x12, 1(x30!)
 add       x31, x31, x12
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P5
 p.lh      x13, 1(x30!)
 add       x31, x31, x13
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P6
 p.lh      x14, 1(x30!)
 add       x31, x31, x14
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P1
 p.lh      x15, 1(x30!)
 add       x31, x31, x15
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P2
 p.lh      x16, 1(x30!)
 add       x31, x31, x16
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P3
 p.lh      x17, 1(x30!)
 add       x31, x31, x17
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P4
 p.lh      x18, 1(x30!)
 add       x31, x31, x18
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P5
 p.lh      x20, 1(x30!)
 add       x31, x31, x20
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P6
 p.lh      x21, 1(x30!)
 add       x31, x31, x21
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P1
 p.lh      x22, 1(x30!)
 add       x31, x31, x22
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P2
 p.lh      x23, 1(x30!)
 add       x31, x31, x23
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P3
 p.lh      x24, 1(x30!)
 add       x31, x31, x24
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P4
 p.lh      x25, 1(x30!)
 add       x31, x31, x25
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P5
 p.lh      x26, 1(x30!)
 add       x31, x31, x26
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P6
 p.lh      x27, 1(x30!)
 add       x31, x31, x27
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P1
 p.lh      x28, 1(x30!)
 add       x31, x31, x28
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P2
 p.lh      x29, 1(x30!)
 add       x31, x31, x29
 add       x31, x31, x30
 
-la        x2, RF_PATTERNS
+la        x2, RF_P3
 p.lh      x30, 1(x2!)
 add       x31, x31, x30
 add       x31, x31, x2
@@ -1767,7 +2121,7 @@ add       x31, x31, x2
 //move signature
 add       x1, x31, x0
 
-la        x30, RF_PATTERNS
+la        x30, RF_P4
 p.lh        x31, 1(x30!)
 add       x1, x1, x31
 add       x1, x1, x30
@@ -1780,149 +2134,149 @@ add       x31, x1, x0
 addi                x1,     x0,     1
 addi                x2,     x0,     1
 
-la        x30, RF_PATTERNS
+la        x30, RF_P5
 p.lh      x1, x2(x30!)
 add       x31, x31, x1
 add       x31, x31, x30
 
 addi                x1,     x0,     1
 
-la        x30, RF_PATTERNS
+la        x30, RF_P6
 p.lh      x2, x1(x30!)
 add       x31, x31, x2
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P1
 p.lh      x3, x1(x30!)
 add       x31, x31, x3
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P2
 p.lh      x4, x1(x30!)
 add       x31, x31, x4
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P3
 p.lh      x5, x1(x30!)
 add       x31, x31, x5
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P4
 p.lh      x6, x1(x30!)
 add       x31, x31, x6
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P5
 p.lh      x7, x1(x30!)
 add       x31, x31, x7
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P6
 p.lh      x8, x1(x30!)
 add       x31, x13, x8
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P1
 p.lh      x9, x1(x30!)
 add       x31, x31, x9
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P2
 p.lh      x10, x1(x30!)
 add       x31, x31, x10
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P3
 p.lh      x11, x1(x30!)
 add       x31, x31, x11
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P4
 p.lh      x12, x1(x30!)
 add       x31, x31, x12
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P5
 p.lh      x13, x1(x30!)
 add       x31, x31, x13
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P6
 p.lh      x14, x1(x30!)
 add       x31, x31, x14
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P1
 p.lh      x15, x1(x30!)
 add       x31, x31, x15
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P2
 p.lh      x16, x1(x30!)
 add       x31, x31, x16
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P3
 p.lh      x17, x1(x30!)
 add       x31, x31, x17
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P4
 p.lh      x18, x1(x30!)
 add       x31, x31, x18
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P5
 p.lh      x20, x1(x30!)
 add       x31, x31, x20
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P6
 p.lh      x21, x1(x30!)
 add       x31, x31, x21
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P1
 p.lh      x22, x1(x30!)
 add       x31, x31, x22
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P2
 p.lh      x23, x1(x30!)
 add       x31, x31, x23
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P3
 p.lh      x24, x1(x30!)
 add       x31, x31, x24
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P4
 p.lh      x25, x1(x30!)
 add       x31, x31, x25
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P5
 p.lh      x26, x1(x30!)
 add       x31, x31, x26
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P6
 p.lh      x27, x1(x30!)
 add       x31, x31, x27
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P1
 p.lh      x28, x1(x30!)
 add       x31, x31, x28
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P2
 p.lh      x29, x1(x30!)
 add       x31, x31, x29
 add       x31, x31, x30
 
-la        x2, RF_PATTERNS
+la        x2, RF_P3
 p.lh      x30, x1(x2!)
 add       x31, x31, x30
 add       x31, x31, x2
@@ -1932,7 +2286,7 @@ addi                x2,     x0,     1
 //move signature
 add       x1, x31, x0
 
-la        x30, RF_PATTERNS
+la        x30, RF_P4
 p.lh      x31, x2(x30!)
 add       x1, x1, x31
 add       x1, x1, x30
@@ -1941,152 +2295,152 @@ add       x1, x1, x30
 add       x31, x1, x0
 
 // test reg-reg without post-increment
-addi                x1,     x0,     1
-addi                x2,     x0,     1
+addi                x1,     x0,     0
+addi                x2,     x0,     0
 
-la        x30, RF_PATTERNS
+la        x30, RF_P5
 p.lh      x1, x2(x30)
 add       x31, x31, x1
 add       x31, x31, x30
 
-addi                x1,     x0,     1
+addi                x1,     x0,     0
 
-la        x30, RF_PATTERNS
+la        x30, RF_P6
 p.lh      x2, x1(x30)
 add       x31, x31, x2
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P1
 p.lh      x3, x1(x30)
 add       x31, x31, x3
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P2
 p.lh      x4, x1(x30)
 add       x31, x31, x4
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P3
 p.lh      x5, x1(x30)
 add       x31, x31, x5
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P4
 p.lh      x6, x1(x30)
 add       x31, x31, x6
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P5
 p.lh      x7, x1(x30)
 add       x31, x31, x7
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P6
 p.lh      x8, x1(x30)
 add       x31, x13, x8
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P1
 p.lh      x9, x1(x30)
 add       x31, x31, x9
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P2
 p.lh      x10, x1(x30)
 add       x31, x31, x10
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P3
 p.lh      x11, x1(x30)
 add       x31, x31, x11
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P4
 p.lh      x12, x1(x30)
 add       x31, x31, x12
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P5
 p.lh      x13, x1(x30)
 add       x31, x31, x13
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P6
 p.lh      x14, x1(x30)
 add       x31, x31, x14
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P1
 p.lh      x15, x1(x30)
 add       x31, x31, x15
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P2
 p.lh      x16, x1(x30)
 add       x31, x31, x16
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P3
 p.lh      x17, x1(x30)
 add       x31, x31, x17
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P4
 p.lh      x18, x1(x30)
 add       x31, x31, x18
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P5
 p.lh      x20, x1(x30)
 add       x31, x31, x20
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P6
 p.lh      x21, x1(x30)
 add       x31, x31, x21
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P1
 p.lh      x22, x1(x30)
 add       x31, x31, x22
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P2
 p.lh      x23, x1(x30)
 add       x31, x31, x23
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P3
 p.lh      x24, x1(x30)
 add       x31, x31, x24
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P4
 p.lh      x25, x1(x30)
 add       x31, x31, x25
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P5
 p.lh      x26, x1(x30)
 add       x31, x31, x26
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P6
 p.lh      x27, x1(x30)
 add       x31, x31, x27
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P1
 p.lh      x28, x1(x30)
 add       x31, x31, x28
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P2
 p.lh      x29, x1(x30)
 add       x31, x31, x29
 add       x31, x31, x30
 
-la        x2, RF_PATTERNS
+la        x2, RF_P3
 p.lh      x30, x1(x2)
 add       x31, x31, x30
 add       x31, x31, x2
@@ -2096,7 +2450,7 @@ addi                x2,     x0,     1
 //move signature
 add       x1, x31, x0
 
-la        x30, RF_PATTERNS
+la        x30, RF_P1
 p.lh      x31, x2(x30)
 add       x1, x1, x31
 add       x1, x1, x30
@@ -2114,147 +2468,147 @@ addi                x1,     x0,     1
 addi                x2,     x0,     0
 
 // test imm-reg with post-increment
-la        x30, RF_PATTERNS
+la        x30, RF_P1
 p.lhu      x1, 1(x30!)
 add       x31, x31, x1
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P2
 p.lhu      x2, 1(x30!)
 add       x31, x31, x2
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P3
 p.lhu      x3, 1(x30!)
 add       x31, x31, x3
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P4
 p.lhu      x4, 1(x30!)
 add       x31, x31, x4
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P5
 p.lhu      x5, 1(x30!)
 add       x31, x31, x5
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P6
 p.lhu      x6, 1(x30!)
 add       x31, x31, x6
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P1
 p.lhu      x7, 1(x30!)
 add       x31, x31, x7
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P2
 p.lhu      x8, 1(x30!)
 add       x31, x13, x8
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P3
 p.lhu      x9, 1(x30!)
 add       x31, x31, x9
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P4
 p.lhu      x10, 1(x30!)
 add       x31, x31, x10
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P5
 p.lhu      x11, 1(x30!)
 add       x31, x31, x11
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P6
 p.lhu      x12, 1(x30!)
 add       x31, x31, x12
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P1
 p.lhu      x13, 1(x30!)
 add       x31, x31, x13
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P2
 p.lhu      x14, 1(x30!)
 add       x31, x31, x14
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P3
 p.lhu      x15, 1(x30!)
 add       x31, x31, x15
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P4
 p.lhu      x16, 1(x30!)
 add       x31, x31, x16
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P5
 p.lhu      x17, 1(x30!)
 add       x31, x31, x17
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P6
 p.lhu      x18, 1(x30!)
 add       x31, x31, x18
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P1
 p.lhu      x20, 1(x30!)
 add       x31, x31, x20
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P2
 p.lhu      x21, 1(x30!)
 add       x31, x31, x21
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P3
 p.lhu      x22, 1(x30!)
 add       x31, x31, x22
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P4
 p.lhu      x23, 1(x30!)
 add       x31, x31, x23
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P5
 p.lhu      x24, 1(x30!)
 add       x31, x31, x24
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P6
 p.lhu      x25, 1(x30!)
 add       x31, x31, x25
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P1
 p.lhu      x26, 1(x30!)
 add       x31, x31, x26
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P2
 p.lhu      x27, 1(x30!)
 add       x31, x31, x27
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P3
 p.lhu      x28, 1(x30!)
 add       x31, x31, x28
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P4
 p.lhu      x29, 1(x30!)
 add       x31, x31, x29
 add       x31, x31, x30
 
-la        x2, RF_PATTERNS
+la        x2, RF_P5
 p.lhu      x30, 1(x2!)
 add       x31, x31, x30
 add       x31, x31, x2
@@ -2262,7 +2616,7 @@ add       x31, x31, x2
 //move signature
 add       x1, x31, x0
 
-la        x30, RF_PATTERNS
+la        x30, RF_P6
 p.lhu        x31, 1(x30!)
 add       x1, x1, x31
 add       x1, x1, x30
@@ -2275,149 +2629,149 @@ add       x31, x1, x0
 addi                x1,     x0,     1
 addi                x2,     x0,     1
 
-la        x30, RF_PATTERNS
+la        x30, RF_P1
 p.lhu      x1, x2(x30!)
 add       x31, x31, x1
 add       x31, x31, x30
 
 addi                x1,     x0,     1
 
-la        x30, RF_PATTERNS
+la        x30, RF_P2
 p.lhu      x2, x1(x30!)
 add       x31, x31, x2
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P3
 p.lhu      x3, x1(x30!)
 add       x31, x31, x3
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P4
 p.lhu      x4, x1(x30!)
 add       x31, x31, x4
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P5
 p.lhu      x5, x1(x30!)
 add       x31, x31, x5
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P6
 p.lhu      x6, x1(x30!)
 add       x31, x31, x6
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P1
 p.lhu      x7, x1(x30!)
 add       x31, x31, x7
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P2
 p.lhu      x8, x1(x30!)
 add       x31, x13, x8
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P3
 p.lhu      x9, x1(x30!)
 add       x31, x31, x9
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P4
 p.lhu      x10, x1(x30!)
 add       x31, x31, x10
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P5
 p.lhu      x11, x1(x30!)
 add       x31, x31, x11
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P6
 p.lhu      x12, x1(x30!)
 add       x31, x31, x12
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P1
 p.lhu      x13, x1(x30!)
 add       x31, x31, x13
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P2
 p.lhu      x14, x1(x30!)
 add       x31, x31, x14
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P3
 p.lhu      x15, x1(x30!)
 add       x31, x31, x15
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P4
 p.lhu      x16, x1(x30!)
 add       x31, x31, x16
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P5
 p.lhu      x17, x1(x30!)
 add       x31, x31, x17
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P6
 p.lhu      x18, x1(x30!)
 add       x31, x31, x18
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P1
 p.lhu      x20, x1(x30!)
 add       x31, x31, x20
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P2
 p.lhu      x21, x1(x30!)
 add       x31, x31, x21
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P3
 p.lhu      x22, x1(x30!)
 add       x31, x31, x22
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P4
 p.lhu      x23, x1(x30!)
 add       x31, x31, x23
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P5
 p.lhu      x24, x1(x30!)
 add       x31, x31, x24
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P6
 p.lhu      x25, x1(x30!)
 add       x31, x31, x25
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P1
 p.lhu      x26, x1(x30!)
 add       x31, x31, x26
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P2
 p.lhu      x27, x1(x30!)
 add       x31, x31, x27
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P3
 p.lhu      x28, x1(x30!)
 add       x31, x31, x28
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P4
 p.lhu      x29, x1(x30!)
 add       x31, x31, x29
 add       x31, x31, x30
 
-la        x2, RF_PATTERNS
+la        x2, RF_P5
 p.lhu      x30, x1(x2!)
 add       x31, x31, x30
 add       x31, x31, x2
@@ -2427,7 +2781,7 @@ addi                x2,     x0,     1
 //move signature
 add       x1, x31, x0
 
-la        x30, RF_PATTERNS
+la        x30, RF_P1
 p.lhu      x31, x2(x30!)
 add       x1, x1, x31
 add       x1, x1, x30
@@ -2436,152 +2790,152 @@ add       x1, x1, x30
 add       x31, x1, x0
 
 // test reg-reg without post-increment
-addi                x1,     x0,     1
-addi                x2,     x0,     1
+addi                x1,     x0,     0
+addi                x2,     x0,     0
 
-la        x30, RF_PATTERNS
+la        x30, RF_P1
 p.lhu      x1, x2(x30)
 add       x31, x31, x1
 add       x31, x31, x30
 
-addi                x1,     x0,     1
+addi                x1,     x0,     0
 
-la        x30, RF_PATTERNS
+la        x30, RF_P2
 p.lhu      x2, x1(x30)
 add       x31, x31, x2
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P3
 p.lhu      x3, x1(x30)
 add       x31, x31, x3
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P4
 p.lhu      x4, x1(x30)
 add       x31, x31, x4
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P5
 p.lhu      x5, x1(x30)
 add       x31, x31, x5
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P6
 p.lhu      x6, x1(x30)
 add       x31, x31, x6
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P1
 p.lhu      x7, x1(x30)
 add       x31, x31, x7
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P2
 p.lhu      x8, x1(x30)
 add       x31, x13, x8
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P3
 p.lhu      x9, x1(x30)
 add       x31, x31, x9
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P4
 p.lhu      x10, x1(x30)
 add       x31, x31, x10
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P5
 p.lhu      x11, x1(x30)
 add       x31, x31, x11
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P6
 p.lhu      x12, x1(x30)
 add       x31, x31, x12
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P1
 p.lhu      x13, x1(x30)
 add       x31, x31, x13
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P2
 p.lhu      x14, x1(x30)
 add       x31, x31, x14
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P3
 p.lhu      x15, x1(x30)
 add       x31, x31, x15
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P4
 p.lhu      x16, x1(x30)
 add       x31, x31, x16
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P5
 p.lhu      x17, x1(x30)
 add       x31, x31, x17
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P6
 p.lhu      x18, x1(x30)
 add       x31, x31, x18
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P1
 p.lhu      x20, x1(x30)
 add       x31, x31, x20
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P2
 p.lhu      x21, x1(x30)
 add       x31, x31, x21
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P3
 p.lhu      x22, x1(x30)
 add       x31, x31, x22
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P4
 p.lhu      x23, x1(x30)
 add       x31, x31, x23
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P5
 p.lhu      x24, x1(x30)
 add       x31, x31, x24
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P6
 p.lhu      x25, x1(x30)
 add       x31, x31, x25
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P1
 p.lhu      x26, x1(x30)
 add       x31, x31, x26
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P2
 p.lhu      x27, x1(x30)
 add       x31, x31, x27
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P3
 p.lhu      x28, x1(x30)
 add       x31, x31, x28
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P4
 p.lhu      x29, x1(x30)
 add       x31, x31, x29
 add       x31, x31, x30
 
-la        x2, RF_PATTERNS
+la        x2, RF_P5
 p.lhu      x30, x1(x2)
 add       x31, x31, x30
 add       x31, x31, x2
@@ -2591,7 +2945,7 @@ addi                x2,     x0,     1
 //move signature
 add       x1, x31, x0
 
-la        x30, RF_PATTERNS
+la        x30, RF_P6
 p.lhu      x31, x2(x30)
 add       x1, x1, x31
 add       x1, x1, x30
@@ -2609,147 +2963,147 @@ addi                x1,     x0,     1
 addi                x2,     x0,     0
 
 // test imm-reg with post-increment
-la        x30, RF_PATTERNS
+la        x30, RF_P1
 p.lw      x1, 1(x30!)
 add       x31, x31, x1
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P2
 p.lw      x2, 1(x30!)
 add       x31, x31, x2
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P3
 p.lw      x3, 1(x30!)
 add       x31, x31, x3
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P4
 p.lw      x4, 1(x30!)
 add       x31, x31, x4
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P5
 p.lw      x5, 1(x30!)
 add       x31, x31, x5
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P6
 p.lw      x6, 1(x30!)
 add       x31, x31, x6
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P1
 p.lw      x7, 1(x30!)
 add       x31, x31, x7
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P2
 p.lw      x8, 1(x30!)
 add       x31, x13, x8
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P3
 p.lw      x9, 1(x30!)
 add       x31, x31, x9
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P4
 p.lw      x10, 1(x30!)
 add       x31, x31, x10
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P5
 p.lw      x11, 1(x30!)
 add       x31, x31, x11
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P6
 p.lw      x12, 1(x30!)
 add       x31, x31, x12
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P1
 p.lw      x13, 1(x30!)
 add       x31, x31, x13
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P2
 p.lw      x14, 1(x30!)
 add       x31, x31, x14
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P3
 p.lw      x15, 1(x30!)
 add       x31, x31, x15
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P4
 p.lw      x16, 1(x30!)
 add       x31, x31, x16
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P5
 p.lw      x17, 1(x30!)
 add       x31, x31, x17
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P6
 p.lw      x18, 1(x30!)
 add       x31, x31, x18
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P1
 p.lw      x20, 1(x30!)
 add       x31, x31, x20
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P2
 p.lw      x21, 1(x30!)
 add       x31, x31, x21
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P3
 p.lw      x22, 1(x30!)
 add       x31, x31, x22
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P4
 p.lw      x23, 1(x30!)
 add       x31, x31, x23
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P5
 p.lw      x24, 1(x30!)
 add       x31, x31, x24
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P6
 p.lw      x25, 1(x30!)
 add       x31, x31, x25
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P1
 p.lw      x26, 1(x30!)
 add       x31, x31, x26
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P2
 p.lw      x27, 1(x30!)
 add       x31, x31, x27
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P3
 p.lw      x28, 1(x30!)
 add       x31, x31, x28
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P4
 p.lw      x29, 1(x30!)
 add       x31, x31, x29
 add       x31, x31, x30
 
-la        x2, RF_PATTERNS
+la        x2, RF_P5
 p.lw      x30, 1(x2!)
 add       x31, x31, x30
 add       x31, x31, x2
@@ -2757,7 +3111,7 @@ add       x31, x31, x2
 //move signature
 add       x1, x31, x0
 
-la        x30, RF_PATTERNS
+la        x30, RF_P6
 p.lw        x31, 1(x30!)
 add       x1, x1, x31
 add       x1, x1, x30
@@ -2773,148 +3127,148 @@ addi                x2,     x0,     1
 //addi                x1,     x30,     1
 //addi                x2,     x31,     1
 
-la        x30, RF_PATTERNS
+la        x30, RF_P6
 p.lw      x1, x2(x30!)
 
 add       x31, x31, x1
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P5
 p.lw      x2, x1(x30!)
 add       x31, x31, x2
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P4
 p.lw      x3, x1(x30!)
 add       x31, x31, x3
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P3
 p.lw      x4, x1(x30!)
 add       x31, x31, x4
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P2
 p.lw      x5, x1(x30!)
 add       x31, x31, x5
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P1
 p.lw      x6, x1(x30!)
 add       x31, x31, x6
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P2
 p.lw      x7, x1(x30!)
 add       x31, x31, x7
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P3
 p.lw      x8, x1(x30!)
 add       x31, x13, x8
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P4
 p.lw      x9, x1(x30!)
 add       x31, x31, x9
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P3
 p.lw      x10, x1(x30!)
 add       x31, x31, x10
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P2
 p.lw      x11, x1(x30!)
 add       x31, x31, x11
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P1
 p.lw      x12, x1(x30!)
 add       x31, x31, x12
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P1
 p.lw      x13, x1(x30!)
 add       x31, x31, x13
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P2
 p.lw      x14, x1(x30!)
 add       x31, x31, x14
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P3
 p.lw      x15, x1(x30!)
 add       x31, x31, x15
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P4
 p.lw      x16, x1(x30!)
 add       x31, x31, x16
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P5
 p.lw      x17, x1(x30!)
 add       x31, x31, x17
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P6
 p.lw      x18, x1(x30!)
 add       x31, x31, x18
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P1
 p.lw      x20, x1(x30!)
 add       x31, x31, x20
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P2
 p.lw      x21, x1(x30!)
 add       x31, x31, x21
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P3
 p.lw      x22, x1(x30!)
 add       x31, x31, x22
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P4
 p.lw      x23, x1(x30!)
 add       x31, x31, x23
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P5
 p.lw      x24, x1(x30!)
 add       x31, x31, x24
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P6
 p.lw      x25, x1(x30!)
 add       x31, x31, x25
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P1
 p.lw      x26, x1(x30!)
 add       x31, x31, x26
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P2
 p.lw      x27, x1(x30!)
 add       x31, x31, x27
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P3
 p.lw      x28, x1(x30!)
 add       x31, x31, x28
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P4
 p.lw      x29, x1(x30!)
 add       x31, x31, x29
 add       x31, x31, x30
 
-la        x2, RF_PATTERNS
+la        x2, RF_P5
 p.lw      x30, x1(x2!)
 add       x31, x31, x30
 add       x31, x31, x2
@@ -2924,7 +3278,7 @@ addi                x2,     x0,     1
 //move signature
 add       x1, x31, x0
 
-la        x30, RF_PATTERNS
+la        x30, RF_P1
 p.lw      x31, x2(x30!)
 add       x1, x1, x31
 add       x1, x1, x30
@@ -2933,152 +3287,152 @@ add       x1, x1, x30
 add       x31, x1, x0
 
 // test reg-reg without post-increment
-addi                x1,     x0,     1
-addi                x2,     x0,     1
+addi                x1,     x0,     0
+addi                x2,     x0,     0
 
-la        x30, RF_PATTERNS
+la        x30, RF_P2
 p.lw      x1, x2(x30)
 add       x31, x31, x1
 add       x31, x31, x30
 
-addi                x1,     x0,     1
+addi                x1,     x0,     0
 
-la        x30, RF_PATTERNS
+la        x30, RF_P3
 p.lw      x2, x1(x30)
 add       x31, x31, x2
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P4
 p.lw      x3, x1(x30)
 add       x31, x31, x3
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P5
 p.lw      x4, x1(x30)
 add       x31, x31, x4
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P6
 p.lw      x5, x1(x30)
 add       x31, x31, x5
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P1
 p.lw      x6, x1(x30)
 add       x31, x31, x6
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P2
 p.lw      x7, x1(x30)
 add       x31, x31, x7
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P3
 p.lw      x8, x1(x30)
 add       x31, x13, x8
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P4
 p.lw      x9, x1(x30)
 add       x31, x31, x9
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P5
 p.lw      x10, x1(x30)
 add       x31, x31, x10
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P6
 p.lw      x11, x1(x30)
 add       x31, x31, x11
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P1
 p.lw      x12, x1(x30)
 add       x31, x31, x12
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P2
 p.lw      x13, x1(x30)
 add       x31, x31, x13
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P3
 p.lw      x14, x1(x30)
 add       x31, x31, x14
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P4
 p.lw      x15, x1(x30)
 add       x31, x31, x15
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P5
 p.lw      x16, x1(x30)
 add       x31, x31, x16
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P6
 p.lw      x17, x1(x30)
 add       x31, x31, x17
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P1
 p.lw      x18, x1(x30)
 add       x31, x31, x18
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P2
 p.lw      x20, x1(x30)
 add       x31, x31, x20
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P3
 p.lw      x21, x1(x30)
 add       x31, x31, x21
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P4
 p.lw      x22, x1(x30)
 add       x31, x31, x22
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P5
 p.lw      x23, x1(x30)
 add       x31, x31, x23
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P1
 p.lw      x24, x1(x30)
 add       x31, x31, x24
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P2
 p.lw      x25, x1(x30)
 add       x31, x31, x25
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P3
 p.lw      x26, x1(x30)
 add       x31, x31, x26
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P4
 p.lw      x27, x1(x30)
 add       x31, x31, x27
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P5
 p.lw      x28, x1(x30)
 add       x31, x31, x28
 add       x31, x31, x30
 
-la        x30, RF_PATTERNS
+la        x30, RF_P6
 p.lw      x29, x1(x30)
 add       x31, x31, x29
 add       x31, x31, x30
 
-la        x2, RF_PATTERNS
+la        x2, RF_P1
 p.lw      x30, x1(x2)
 add       x31, x31, x30
 add       x31, x31, x2
@@ -3088,7 +3442,7 @@ addi                x2,     x0,     1
 //move signature
 add       x1, x31, x0
 
-la        x30, RF_PATTERNS
+la        x30, RF_P3
 p.lw      x31, x2(x30)
 add       x1, x1, x31
 add       x1, x1, x30
@@ -3096,8 +3450,8 @@ add       x1, x1, x30
 // restore signature
 add       x31, x1, x0
 
-//////////////////////*/////////////////////
 
+///////////////////////////////////////////
 
 //store value in signature
 la x30, signature
@@ -3139,6 +3493,29 @@ signature:
 .section ".TEST_RODATA", "a"
 
 //TEST ALL 0 AND ALL 1 FOR EACH REGISTER
+
+RF_P1:
+.long 0x55555555
+RF_P2:
+.long 0xaaaaaaaa
+RF_P3:
+.long 0x33333333
+RF_P4:
+.long 0xcccccccc
+RF_P5:
+.long 0x0f0f0f0f
+RF_P6:
+.long 0xf0f0f0f0
+
+RF_XOR:
+.long 0x55555555
+.long 0xaaaaaaaa
+.long 0x33333333
+.long 0xcccccccc
+.long 0x0f0f0f0f
+.long 0xf0f0f0f0
+.long 0x00ff00ff
+.long 0xff00ff00
 
 RF_PATTERNS:
 .long 0x00000000
