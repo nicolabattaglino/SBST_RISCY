@@ -89,30 +89,250 @@ _start:
 	call atexit
 	call __libc_init_array
 
-/* call boot-time software-based self-test */
-//	call _sbst_boot
+///////////////////////////
+//////// sbst_boot ////////
+///////////////////////////
+
+	la x30, ROUTINES
+	lb x29, 0(x30)
+	beq x29,x0,boot_correct
+
+	call _sbst_boot
+
 	mv x7, a0
 	la x5, SIGNATURES
-	lw x6, 0(x5)
-	beq x6,a0,correct
-//  call _sbst_alu
-//   call _sbst_alu2
-//   call _sbst_alui
-//   call _sbst_palu
-//   call _sbst_pvalu
-//   call _sbst_pvalu2
-//   call _sbst_regs
-//   call _sbst_mac
-	
+	lw x6, 0*4(x5)
+	beq x6,a0,boot_correct
+	halt
+boot_correct:
 
-	call _sbst_regs
-	call _sbst_regseb
-	call _sbst_regsebu
-	call _sbst_regseh
-	call _sbst_regsehu
-	call _sbst_regsew
-	call _sbst_regsbhw
-	call _sbst_regs
+///////////////////////////
+//////// alu //////////////
+///////////////////////////
+
+	lb x29, 1(x30)
+	beq x29,x0,alu_correct
+
+  	call _sbst_alu
+
+	mv x7, a0
+	la x5, SIGNATURES
+	lw x6, 1*4(x5)
+	beq x6,a0,alu_correct
+	halt
+alu_correct:
+
+////////////////////////////
+//////// alu2 //////////////
+///////////////////////////
+
+	lb x29, 2(x30)
+	beq x29,x0,alu2_correct
+
+  	call _sbst_alu2
+
+	mv x7, a0
+	la x5, SIGNATURES
+	lw x6, 2*4(x5)
+	beq x6,a0,alu2_correct
+	halt
+alu2_correct:
+
+////////////////////////////
+//////// alui //////////////
+////////////////////////////
+
+	lb x29, 3(x30)
+	beq x29,x0,alui_correct
+
+	call _sbst_alui
+
+	mv x7, a0
+	la x5, SIGNATURES
+	lw x6, 3*4(x5)
+	beq x6,a0,alui_correct
+	halt
+alui_correct:
+
+////////////////////////////
+//////// palu //////////////
+////////////////////////////
+
+	lb x29, 4(x30)
+	beq x29,x0,palu_correct
+
+    call _sbst_palu
+
+	mv x7, a0
+	la x5, SIGNATURES
+	lw x6, 4*4(x5)
+	beq x6,a0,palu_correct
+	halt
+palu_correct:
+
+////////////////////////////
+//////// pvalu /////////////
+////////////////////////////
+
+	lb x29, 5(x30)
+	beq x29,x0,pvalu_correct
+
+    call _sbst_pvalu
+
+	mv x7, a0
+	la x5, SIGNATURES
+	lw x6, 5*4(x5)
+	beq x6,a0,pvalu_correct
+	halt
+pvalu_correct:
+
+////////////////////////////
+//////// pvalu2 ////////////
+////////////////////////////
+
+	lb x29, 6(x30)
+	beq x29,x0,pvalu2_correct
+
+    call _sbst_pvalu2
+
+	mv x7, a0
+	la x5, SIGNATURES
+	lw x6, 6*4(x5)
+	beq x6,a0,pvalu2_correct
+	halt
+pvalu2_correct:
+
+////////////////////////////
+//////// mac ///////////////
+////////////////////////////
+
+	lb x29, 7(x30)
+	beq x29,x0,mac_correct
+
+    call _sbst_mac
+
+	mv x7, a0
+	la x5, SIGNATURES
+	lw x6, 7*4(x5)
+	beq x6,a0,mac_correct
+	halt
+mac_correct:
+
+////////////////////////////
+//////// regs //////////////
+////////////////////////////
+
+	lb x29, 8(x30)
+	beq x29,x0,regs_correct
+
+    call _sbst_regs
+
+	mv x7, a0
+	la x5, SIGNATURES
+	lw x6, 8*4(x5)
+	beq x6,a0,regs_correct
+	halt
+regs_correct:
+
+////////////////////////////
+//////// regseb ////////////
+////////////////////////////
+
+	lb x29, 9(x30)
+	beq x29,x0,regseb_correct
+
+    call _sbst_regseb
+
+	mv x7, a0
+	la x5, SIGNATURES
+	lw x6, 9*4(x5)
+	beq x6,a0,regseb_correct
+	halt
+regseb_correct:
+
+
+////////////////////////////
+//////// regsebu ///////////
+////////////////////////////
+
+	lb x29, 10(x30)
+	beq x29,x0,regsebu_correct
+
+    call _sbst_regsebu
+
+	mv x7, a0
+	la x5, SIGNATURES
+	lw x6, 10*4(x5)
+	beq x6,a0,regsebu_correct
+	halt
+regsebu_correct:
+
+
+////////////////////////////
+//////// regseh  ///////////
+////////////////////////////
+
+	lb x29, 11(x30)
+	beq x29,x0,regseh_correct
+
+    call _sbst_regseh
+
+	mv x7, a0
+	la x5, SIGNATURES
+	lw x6, 11*4(x5)
+	beq x6,a0,regseh_correct
+	halt
+regseh_correct:
+
+
+////////////////////////////
+//////// regsehu ///////////
+////////////////////////////
+
+	lb x29, 12(x30)
+	beq x29,x0,regsehu_correct
+
+    call _sbst_regsehu
+
+	mv x7, a0
+	la x5, SIGNATURES
+	lw x6, 12*4(x5)
+	beq x6,a0,regsehu_correct
+	halt
+regsehu_correct:
+
+////////////////////////////
+//////// regsew ////////////
+////////////////////////////
+
+	lb x29, 13(x30)
+	beq x29,x0,regsew_correct
+
+    call _sbst_regsew
+
+	mv x7, a0
+	la x5, SIGNATURES
+	lw x6, 13*4(x5)
+	beq x6,a0,regsew_correct
+	halt
+regsew_correct:
+
+////////////////////////////
+//////// regsebhw //////////
+////////////////////////////
+
+	lb x29, 14(x30)
+	beq x29,x0,regsebhw_correct
+
+    call _sbst_regsebhw
+
+	mv x7, a0
+	la x5, SIGNATURES
+	lw x6, 14*4(x5)
+	beq x6,a0,regsebhw_correct
+	halt
+regsebhw_correct:
+
 
 
 /* call main */
@@ -141,7 +361,38 @@ _fini:
 
 .section ".TEST_RODATA", "a"
 
+ROUTINES:
+
+	.byte 0x00 // sbst_boot
+	.byte 0x00 // alu
+	.byte 0x00 // alu2
+	.byte 0x00 // alui
+	.byte 0x00 // palu
+	.byte 0x00 // pvalu
+	.byte 0x00 // pvalu2
+	.byte 0x00 // mac
+	.byte 0x00 // regs
+	.byte 0x00 // regseb
+	.byte 0x00 // regsebu
+	.byte 0x00 // regseh
+	.byte 0x00 // regsehu
+	.byte 0x00 // regsew
+	.byte 0x00 // regsbhw
+
+
 SIGNATURES:
 	.long 0x000001F0 // sbst_boot signature
-	.long 0x00000002
-	.long 0x00000003
+	.long 0x00000000 // alu signature
+	.long 0x00000000 // alu2 signature
+	.long 0x00000000 // alui signature
+	.long 0x00000000 // palu signature
+	.long 0x00000000 // pvalu signature
+	.long 0x00000000 // pvalu2 signature
+	.long 0x00000000 // mac signature
+	.long 0x00000000 // regs signature
+	.long 0x00000000 // regseb signature
+	.long 0x00000000 // regsebu signature
+	.long 0x00000000 // regseh signature
+	.long 0x00000000 // regsehu signature
+	.long 0x00000000 // regsew signature
+	.long 0x00000000 // regsbhw signature
