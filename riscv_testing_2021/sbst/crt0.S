@@ -318,20 +318,20 @@ regsehu_correct:
 regsew_correct:
 
 ////////////////////////////
-//////// regsebhw //////////
+//////// regsbhw //////////
 ////////////////////////////
 
 	lb x29, 14(x30)
-	beq x29,x0,regsebhw_correct
+	beq x29,x0,regsbhw_correct
 
-    call _sbst_regsebhw
+    call _sbst_regsbhw
 
 	mv x7, a0
 	la x5, SIGNATURES
 	lw x6, 14*4(x5)
-	beq x6,a0,regsebhw_correct
+	beq x6,a0,regsbhw_correct
 	halt
-regsebhw_correct:
+regsbhw_correct:
 
 
 
