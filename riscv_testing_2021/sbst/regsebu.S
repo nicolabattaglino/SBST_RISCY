@@ -565,7 +565,7 @@ add       x31, x1, x0
 
 
 ///////////////////////////////////////////
-
+mv a0, x31
 //store value in signature
 la x30, signature
 sw x31,0*4(x30)

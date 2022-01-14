@@ -387,6 +387,7 @@ add       x31, x31, x18
 
 
 ///////////////////////////////////////////
+mv a0, x31
 
 //store value in signature
 la x30, signature

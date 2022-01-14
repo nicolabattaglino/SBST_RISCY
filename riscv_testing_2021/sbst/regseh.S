@@ -566,7 +566,8 @@ add       x31, x1, x0
 
 
 ///////////////////////////////////////////
-
+mv x10, x31
+//mv x28, x10
 //store value in signature
 la x30, signature
 sw x31,0*4(x30)
@@ -591,7 +592,7 @@ lw		x25,	13*4(x5)
 lw		x26,	14*4(x5)
 lw		x27,	15*4(x5)
 
-
+ret
 
 // -------------------------------------
 .section ".TEST_DATA", "aw"

@@ -41,7 +41,7 @@ _start:
 
 /* Invoke MARCH test */
 
-//	call _march
+	//call _march
 
 
 /* initialize global pointer */
@@ -88,6 +88,9 @@ _start:
 	la a0, __libc_fini_array
 	call atexit
 	call __libc_init_array
+
+// initialize registers for simulation...
+	
 
 ///////////////////////////
 //////// sbst_boot ////////
@@ -142,7 +145,7 @@ alu2_correct:
 
 ////////////////////////////
 //////// alui //////////////
-////////////////////////////
+///////////////////////////
 
 	la x30, ROUTINES
 	lb x29, 3(x30)
@@ -302,15 +305,16 @@ regseh_correct:
 
 	la x30, ROUTINES
 	lb x29, 12(x30)
-	beq x29,x0,regsehu_correct
+	beq x29, x0, regsehu_correct
 
     call _sbst_regsehu
 
 	mv x7, a0
 	la x5, SIGNATURES
 	lw x6, 12*4(x5)
-	beq x6,a0,regsehu_correct
+	beq x6, a0, regsehu_correct
 	j stop
+
 regsehu_correct:
 
 ////////////////////////////
@@ -319,7 +323,7 @@ regsehu_correct:
 
 	la x30, ROUTINES
 	lb x29, 13(x30)
-	beq x29,x0,regsew_correct
+	beq x29,a0,regsew_correct
 
     call _sbst_regsew
 
@@ -339,11 +343,12 @@ regsew_correct:
 	beq x29,x0,regsbhw_correct
 
     call _sbst_regsbhw
-
+	
 	mv x7, a0
 	la x5, SIGNATURES
 	lw x6, 14*4(x5)
 	beq x6,a0,regsbhw_correct
+	j stop
 
 stop:	j stop
 
@@ -379,36 +384,35 @@ _fini:
 
 ROUTINES:
 
-	.byte 0x00 // sbst_boot
+	.byte 0x01 // sbst_boot
 	.byte 0x01 // alu
-	.byte 0x00 // alu2
+	.byte 0x01 // alu2
 	.byte 0x01 // alui
 	.byte 0x01 // palu
 	.byte 0x01 // pvalu
 	.byte 0x01 // pvalu2
 	.byte 0x01 // mac
-	.byte 0x00 // regs
-	.byte 0x00 // regseb
-	.byte 0x00 // regsebu
-	.byte 0x00 // regseh
-	.byte 0x00 // regsehu
-	.byte 0x00 // regsew
-	.byte 0x00 // regsbhw
-
-
+	.byte 0x01 // regs
+	.byte 0x01 // regseb
+	.byte 0x01 // regsebu
+	.byte 0x01 // regseh
+	.byte 0x01 // regsehu
+	.byte 0x01 // regsew
+	.byte 0x01 // regsbhw
 SIGNATURES:
-	.long 0x000001F0 // sbst_boot signature
+	.long 0x0000001F // sbst_boot signature
 	.long 0x2819099F // alu signature
-	.long 0xE4E2230E // alu2 signature
-	.long 0x6F017d19 // alui signature
-	.long 0xE6B6F409 // palu signature
+	.long 0xE4E22606 // alu2 signature
+	.long 0x6F0185f5 // alui signature
+	.long 0xE5b6f1fe // palu signature
 	.long 0x9D599FFA // pvalu signature
 	.long 0x76EDE524 // pvalu2 signature
 	.long 0xB28B3DFB // mac signature
-	.long 0x00000000 // regs signature
-	.long 0x00000000 // regseb signature
-	.long 0x00000000 // regsebu signature
-	.long 0x00000000 // regseh signature
-	.long 0x00000000 // regsehu signature
-	.long 0x00000000 // regsew signature
-	.long 0x00000000 // regsbhw signature
+	.long 0x26C5266C // regs signature
+	.long 0x000CB42c // regseb signature
+	.long 0x000CB9ec // regsebu signature
+	.long 0x000D3cda // regseh signature
+	.long 0x0018Ba2d // regsehu signature
+	.long 0x85F9accb // regsew signature
+	.long 0xFFFFFFA3 // regsbhw signature
+
