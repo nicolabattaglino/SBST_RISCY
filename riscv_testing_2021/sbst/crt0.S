@@ -41,7 +41,7 @@ _start:
 
 /* Invoke MARCH test */
 
-	//call _march
+	call _march
 
 
 /* initialize global pointer */
@@ -105,7 +105,7 @@ _start:
 	mv x7, a0
 	la x5, SIGNATURES
 	lw x6, 0*4(x5)
-	beq x6,a0,boot_correct
+	beq x6,x7,boot_correct
 	j stop
 boot_correct:
 
@@ -122,7 +122,7 @@ boot_correct:
 	mv x7, a0
 	la x5, SIGNATURES
 	lw x6, 1*4(x5)
-	beq x6,a0,alu_correct
+	beq x6,x7,alu_correct
 	j stop
 alu_correct:
 
@@ -139,7 +139,7 @@ alu_correct:
 	mv x7, a0
 	la x5, SIGNATURES
 	lw x6, 2*4(x5)
-	beq x6,a0,alu2_correct
+	beq x6,x7,alu2_correct
 	j stop
 alu2_correct:
 
@@ -156,7 +156,7 @@ alu2_correct:
 	mv x7, a0
 	la x5, SIGNATURES
 	lw x6, 3*4(x5)
-	beq x6,a0,alui_correct
+	beq x6,x7,alui_correct
 	j stop
 alui_correct:
 
@@ -173,7 +173,7 @@ alui_correct:
 	mv x7, a0
 	la x5, SIGNATURES
 	lw x6, 4*4(x5)
-	beq x6,a0,palu_correct
+	beq x6,x7,palu_correct
 	j stop
 palu_correct:
 
@@ -190,7 +190,7 @@ palu_correct:
 	mv x7, a0
 	la x5, SIGNATURES
 	lw x6, 5*4(x5)
-	beq x6,a0,pvalu_correct
+	beq x6,x7,pvalu_correct
 	j stop
 pvalu_correct:
 
@@ -207,7 +207,7 @@ pvalu_correct:
 	mv x7, a0
 	la x5, SIGNATURES
 	lw x6, 6*4(x5)
-	beq x6,a0,pvalu2_correct
+	beq x6,x7,pvalu2_correct
 	j stop
 pvalu2_correct:
 
@@ -224,7 +224,7 @@ pvalu2_correct:
 	mv x7, a0
 	la x5, SIGNATURES
 	lw x6, 7*4(x5)
-	beq x6,a0,mac_correct
+	beq x6,x7,mac_correct
 	j stop
 mac_correct:
 
@@ -241,7 +241,7 @@ mac_correct:
 	mv x7, a0
 	la x5, SIGNATURES
 	lw x6, 8*4(x5)
-	beq x6,a0,regs_correct
+	beq x6,x7,regs_correct
 	j stop
 regs_correct:
 
@@ -258,7 +258,7 @@ regs_correct:
 	mv x7, a0
 	la x5, SIGNATURES
 	lw x6, 9*4(x5)
-	beq x6,a0,regseb_correct
+	beq x6,x7,regseb_correct
 	j stop
 regseb_correct:
 
@@ -276,7 +276,7 @@ regseb_correct:
 	mv x7, a0
 	la x5, SIGNATURES
 	lw x6, 10*4(x5)
-	beq x6,a0,regsebu_correct
+	beq x6,x7,regsebu_correct
 	j stop
 regsebu_correct:
 
@@ -294,7 +294,7 @@ regsebu_correct:
 	mv x7, a0
 	la x5, SIGNATURES
 	lw x6, 11*4(x5)
-	beq x6,a0,regseh_correct
+	beq x6,x7,regseh_correct
 	j stop
 regseh_correct:
 
@@ -312,7 +312,7 @@ regseh_correct:
 	mv x7, a0
 	la x5, SIGNATURES
 	lw x6, 12*4(x5)
-	beq x6, a0, regsehu_correct
+	beq x6, x7, regsehu_correct
 	j stop
 
 regsehu_correct:
@@ -330,7 +330,7 @@ regsehu_correct:
 	mv x7, a0
 	la x5, SIGNATURES
 	lw x6, 13*4(x5)
-	beq x6,a0,regsew_correct
+	beq x6,x7,regsew_correct
 	j stop
 regsew_correct:
 
@@ -347,7 +347,7 @@ regsew_correct:
 	mv x7, a0
 	la x5, SIGNATURES
 	lw x6, 14*4(x5)
-	beq x6,a0,regsbhw_correct
+	beq x6,x7,regsbhw_correct
 	j stop
 
 stop:	j stop
@@ -402,17 +402,17 @@ ROUTINES:
 SIGNATURES:
 	.long 0x0000001F // sbst_boot signature
 	.long 0x2819099F // alu signature
-	.long 0xE4E22606 // alu2 signature
-	.long 0x6F0185f5 // alui signature
+	.long 0xE4E1E502 // alu2 signature
+	.long 0x4E0F8AED // alui signature
 	.long 0xE5b6f1fe // palu signature
 	.long 0x9D599FFA // pvalu signature
 	.long 0x76EDE524 // pvalu2 signature
 	.long 0xB28B3DFB // mac signature
 	.long 0x26C5266C // regs signature
-	.long 0x000CB42c // regseb signature
-	.long 0x000CB9ec // regsebu signature
-	.long 0x000D3cda // regseh signature
-	.long 0x0018Ba2d // regsehu signature
-	.long 0x85F9accb // regsew signature
+	.long 0x00000B37 // regseb signature
+	.long 0x00000B37 // regsebu signature
+	.long 0x0000887D // regseh signature
+	.long 0x000BFFF4 // regsehu signature
+	.long 0x85ecece2 // regsew signature
 	.long 0xFFFFFFA3 // regsbhw signature
 

@@ -787,7 +787,7 @@ sw x30, 112(x1)
 
 
 //AUIPC
-auipc x30,0x0F0F0
+/*auipc x30,0x0F0F0
 add x31, x31, x30          //update signature
 auipc x29,0x00FF0
 add x31, x31, x29          //update signature
@@ -805,7 +805,7 @@ auipc x23,0x3AFAC
 add x31, x31, x23          //update signature
 auipc x22,0x36472
 add x31, x31, x22          //update signature
-
+*/
 /*
 auipc x21,0x5DDD5
 add x31, x31, x21          //update signature

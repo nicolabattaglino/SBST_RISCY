@@ -414,23 +414,23 @@ add x31, x0, x0          //initialize signature
 	j jump2
 
 jump1:
-	add x31, x31, x4         //update signature
+	add x31, x31, 1         //update signature
 	beq x2, x2, jump4
 
 jump2:
-	add x31, x31, x5         //update signature
+	add x31, x31, 1         //update signature
 	bne x2, x1, jump1
 
 jump3:
-	add x31, x31, x6         //update signature
+	add x31, x31, 1         //update signature
 	blt x3, x2, jump5
 
 jump4:
-	add x31, x31, x7         //update signature
+	add x31, x31, 1         //update signature
 	bge x2, x1, jump3
 
 jump5:
-	add x31, x31, x8         //update signature
+	add x31, x31, 1         //update signature
 
 
 
